@@ -1,0 +1,405 @@
+{
+  "en": {
+    "company": {
+      "domain": "memorres.com",
+      "welcomeMessage": "Welcome",
+      "companyName": "Noah",
+      "companyTitle": "Noah is here.",
+      "companyTitle2": "Levitate!"
+    },
+    "general": {
+      "errors": {
+        "emailRequired": "Email is required",
+        "firstNameRequired": "Please enter your first name",
+        "lastNameRequired": "Please enter your last name",
+        "departmentRequired": "Department is required",
+        "phoneRequired": "Phone Number is required",
+        "designationRequired": "Designation is required",
+        "passwordRequired": "Please enter a password",
+        "invalidEmail": "Please enter a valid email address",
+        "invalidDomain": "Please enter the valid company domain",
+        "invalidPhone": "Please enter a correct phone number",
+        "serverError": "Server Error. Please contact your admin, or try again later.",
+        "usersFetchFail": "Can't get users",
+        "userProfileFail": "Can't fetch user profile",
+        "password": {
+          "notMatching": "Passwords do not match",
+          "notCapital": "Password must contain at least one uppercase letter.",
+          "notLowercase": "Password must contain at least one lowercase letter.",
+          "notNumber": "Password must contain at least one digit.",
+          "notSpecial": "Password must contain at least one special character (@$!%*?&#).",
+          "notLength": "Password must be at least 8 characters long."
+        }
+      }
+    },
+    "inviteUser": {
+      "heading": "Invite User",
+      "emailLabel": "E-mail Address",
+      "roleLabel": "User Role",
+      "btnText": "Invite User",
+      "success": "Invite Sent Successfully",
+      "errors": {
+        "generalError": "Some error occured while inviting",
+        "emailRequired": "Please enter an email address to invite",
+        "roleRequired": "User being invited must have a role",
+        "error.authToken.inactiveUser": "This user is inactive",
+        "error.authToken.notAuthorised": "You are not authorized",
+        "error.authToken.invalidToken": "Please login again",
+        "error.authToken.notFound": "You are not authorized. Please login again",
+        "error.sendInvitation.roleNotFound": "Such role doesn't exist",
+        "error.sendInvitation.duplicateEmail": "This user has been already invited"
+      }
+    },
+    "registerUser": {
+      "heading": "Create Your Account",
+      "uploadProfileInstruction": "Upload a profile picture",
+      "departmentLabel": "Select Your Department",
+      "firstNameLabel": "First Name",
+      "lastNameLabel": "Last Name",
+      "designationLabel": "Designation",
+      "phoneLabel": "Phone Number",
+      "passwordLabel": "Enter A Secure Password",
+      "confirmPassLabel": "Re-enter The Same Password",
+      "btnText": "Create Account",
+      "success": "Account created. Redirecting to login...",
+      "errors": {
+        "generalError": "Some error occured while creating your account",
+        "error.addUser.invitationNotFound": "Invitation not found",
+        "error.addUser.tokenExpired": "Invitation link has expired. Please contact admin",
+        "error.addUser.phone.invalid": "Phone number not valid",
+        "error.addUser.failed": "Unable to create an account this time."
+      }
+    },
+    "login": {
+      "emailLabel": "E-mail Address",
+      "passwordLabel": "Password",
+      "forgotPasswordLabel": "Forgot Password ?",
+      "btnText": "Log In",
+      "errors": {
+        "generalError": "Unable to login",
+        "error.login.invalidCredentials": "Incorrect email or password",
+        "error.login.accountBlocked": "Too many login attempts. Please contact your admin",
+        "error.login.inactiveUser": "This account is disabled"
+      }
+    },
+    "forgotPassword": {
+      "emailLabel": "Email",
+      "requestSentTitle": "Reset link sent.",
+      "requestSentSubtitle": "Please view your email.",
+      "btnText": "Reset",
+      "placeholderSubtext": "xxxxxx@",
+      "errors": {
+        "generalError": "Unable to send reset email",
+        "error.requestResetPasswordLink.email.invalid": "Incorrect email.",
+        "error.requestResetPasswordLink.notAllowed": "You are not authorized",
+        "error.requestResetPasswordLink.tokenNotCreated": "Unable to create reset token. Please try again later...",
+        "error.requestResetPasswordLink.failed": "Failed to set reset email"
+      }
+    },
+    "resetPassword": {
+      "passwordLabel": "Enter New Password",
+      "passwordPlaceholder": "Enter a secure password",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter the same password",
+      "btnText": "Set Password",
+      "success": "You have updated your password successfully.",
+      "errors": {
+        "generalError": "Unable to reset password currently",
+        "error.resetPassword.invalidToken": "Reset link has expired or is incorrect. Please request again.",
+        "error.resetPassword.invalidUser": "The user that requested this token doesn't exist.",
+        "error.resetPassword.notAllow": "Resetting not allowed",
+        "error.authToken.inValidToken": "You are not authorized",
+        "error.authToken.tokenExpired": "You are not authorized",
+        "error.authToken.inactiveUser": "This account is inactive",
+        "error.resetpassword.failed": "Resetting failed"
+      }
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "requirements": "Requirements",
+      "candidates": "Candidates",
+      "analytics": "Analytics",
+      "process": "Process",
+      "admin": "Admin",
+      "interviews": "Interviews",
+      "home": "Home",
+      "profile": "Profile"
+    },
+    "profile": {
+      "heading": "Your Profile",
+      "logoutBtnText": "Logout"
+    },
+    "admin": {
+      "heading": "Administrator Controls",
+      "btnText": "Invite User",
+      "chipTextUser": "All Users",
+      "chipTextPermissions": "Permissions Management",
+      "allUsers": {
+        "tableHeading": "All Users",
+        "name": "User Name",
+        "designation": "Designation",
+        "email": "Email",
+        "status": "Account Status",
+        "userRole": "User Role",
+        "details": "More Details"
+      },
+      "user": {
+        "heading": "Manage User",
+        "cardHeading": "User Details"
+      }
+    },
+    "FORMAT AND UPDATE FROM DOWN HERE": "DELETE THIS MESSAGE AFTERWARDS",
+    "form": {
+      "formHeader": "Finish Setting Up Your Profile",
+      "editUser": "Edit User",
+      "name": "Name",
+      "enterPassword": "Enter Password",
+      "confirmPassword": "Confirm Password",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "fullName": "Full Name",
+      "email": "E-mail",
+      "mobile": "Mobile",
+      "mobileNumber": "Mobile Number",
+      "role": "Role",
+      "source": "Source",
+      "designation": "Designation",
+      "department": "Department",
+      "location": "Location",
+      "reqno": "Requirement no.",
+      "jobtype": "Job Type",
+      "reportingTo": "Reporting to",
+      "uploadresume": "Upload Resume",
+      "uploadresumes": "Upload Resumes",
+      "nofresume": "Number of resume uploaded",
+      "minexp": "Minimum Experience",
+      "maxexp": "Maximum Experience",
+      "description": "Description",
+      "responsibilities": "Responsibilities",
+      "skills": "Skills",
+      "status": "Status",
+      "update": "Update",
+      "preview": "Preview",
+      "inviteUser": "Invite User",
+      "inviteButton": "Invite User",
+      "profileImageSet": "Set Your Profile Image",
+      "formrequired": {
+        "fname": "First Name is required",
+        "lname": "Last Name is required",
+        "name": "Name is required",
+        "email": "Email is required",
+        "designation": "Designation is required",
+        "department": "Department is required",
+        "mobile": "Mobile is required",
+        "mobilevalidator": "This is not a valid Mobile number",
+        "source": "Source is required",
+        "location": "Location is required",
+        "validpdf": "Please attach a valid PDF",
+        "validpdfs": "One or more Invalid files attached",
+        "reqno": "Requirement id is missing",
+        "jobtype": "Job type is required",
+        "minexp": "Minimum experience is required",
+        "maxexp": "Maximum experience is required",
+        "role": "Role is required",
+        "reportingto": "Reporting to is required",
+        "status": "Status is required",
+        "mobileValidator": "Please enter a valid number and Maximum Number should be 10 digits",
+        "feedback": "Feedback is required"
+      }
+    },
+    "heading": {
+      "jobDescription": "Job description",
+      "responsibilities": "Responsibilities",
+      "skills": "Skills",
+      "notifications": "Notifications",
+      "assignToJob": "Assign to Job",
+      "editPipeline": "Edit Pipeline",
+      "feedback": "Feedback",
+      "reschedule": "Redchedule",
+      "admin": "Administrator Controls",
+      "userDetails": "User details",
+      "userPermission": "User permissions",
+      "personalDetails": "Personal Details",
+      "professionalDetails": "Professional Details",
+      "details": "Details",
+      "notes": "Notes",
+      "history": "History",
+      "candidateDetails": "Candidate Details",
+      "interviewList": "Interview List",
+      "resume": "Resume",
+      "allCandidates": "All Candidates",
+      "allJobs": "All Jobs",
+      "appliedCandidates": "Applied Candidates",
+      "analytics": "Analytics",
+      "yourRequirements": "Your Requirements",
+      "yourInterviews": "Your Interviews",
+      "process": "Process",
+      "design": "Design",
+      "profile": "Your Profile",
+      "requirements": "Requirements",
+      "allRequirements": "All Requirements"
+    },
+    "label": {
+      "exp": "Exp: 7 Yrs",
+      "fullTime": "Full time",
+      "ctc": "CTC: 4L-5L",
+      "react": "React.Js",
+      "js": "Javascript",
+      "webApp": "Web Application",
+      "team": "Team Management",
+      "openJob": "Choose open job",
+      "enterFeedback": "Enter your Feedback",
+      "suggestedTime": "Suggested Time",
+      "duration": "Duration",
+      "userManagement": "User Management",
+      "permissions": "Permissions",
+      "users": "Users",
+      "name": "Name",
+      "email": "Email",
+      "designation": "Designation",
+      "status": "Status",
+      "role": "Role",
+      "details": "Details",
+      "resume": "Resume",
+      "hiringPipeline": "Hiring Pipeline",
+      "interview": "Interview",
+      "history": "History",
+      "feedback": "Feedback",
+      "scheduledBy": "Scheduled By",
+      "page": "Page",
+      "of": "of",
+      "add": "Add",
+      "candidates": "Candidates",
+      "skills": "Skills",
+      "processedJobs": "Processed Jobs",
+      "location": "Location",
+      "source": "Source",
+      "fName": "First Name",
+      "lName": "Last Name",
+      "phone": "Phone",
+      "priority": "Priority",
+      "reqNo": "Req No",
+      "department": "Department",
+      "interviewDate": "Interview Date",
+      "timings": "Timings",
+      "availability": "Availability",
+      "vacancies": "Vacancies"
+    },
+    "button": {
+      "back": "Back",
+      "open": "Open",
+      "onSite": "On site",
+      "markAllRead": "Mark all as read",
+      "cancel": "Cancel",
+      "assign": "Assign",
+      "inactive": "No Inactive",
+      "delete": "Yes Delete",
+      "createProcess": "Create Process",
+      "addStage": "Add Stage",
+      "submit": "Submit",
+      "suggest": "Suggest",
+      "confirm": "Confirm",
+      "inviteUser": "Invite User",
+      "add": "Add",
+      "reject": "Reject",
+      "moveToNextStage": "Move To Next Stage",
+      "addNotes": "Add Notes",
+      "scheduleInterview": "Schedule Interview",
+      "provideFeedback": "Provide Feedback",
+      "addIndividual": "Add Candidate",
+      "bulkUpload": "Bulk Upload",
+      "jobDescription": "Job description",
+      "downloadReport": "Download Report",
+      "createrequirement": "Create Requirement",
+      "stageName": "Stage Name",
+      "logout": "Logout",
+      "createJob": "Create a Job"
+    },
+    "input": {
+      "search": "Search by Name",
+      "dateFormat": "DD MMMM YYYY"
+    },
+    "tooltip": {
+      "google": "Sign in with Google"
+    },
+    "popup": {
+      "inviteSuccess": "Invitation sent successfully!",
+      "inviteFail": "Invitation failed",
+      "inviteGenaralFail": "Invitation failed. Please try again",
+      "deleteConfirmation": "Are you sure you want to Delete User?",
+      "deleteTextMessage": "Deleting this user will assign Tasks, Candidates & Pipelines to their respective reporting manager",
+      "resetLinkSuccess": "Reset Link Sent.",
+      "viewEmail": "Please view your email.",
+      "registerSuccess": "Registration Successful!",
+      "registerFail": "Registration Failed. Please try again",
+      "registerGeneral": "Registration failed. Server error."
+    },
+    "dataitem": {
+      "this": "this",
+      "month": "month"
+    },
+    "hiringstages": {
+      "label": {
+        "screeningCall": "Screening Call",
+        "assessment": "Assessment",
+        "interview": "Interview",
+        "offered": "Offered",
+        "joined": "Joined"
+      }
+    },
+    "candidate": {
+      "addcandidate": "Add Candidate",
+      "addcandidates": "Add Candidates"
+    },
+    "interview": {
+      "editinterview": "Edit Interview",
+      "scheduleinterview": "Schedule Interview",
+      "update": "Update",
+      "schedule": "Schedule",
+      "department": "Department",
+      "date": "Date",
+      "startime": "Start Time",
+      "schedulewith": "Schedule interview with",
+      "googleschedule": "Schedule Google Calendar",
+      "required": {
+        "department": "Department is required",
+        "date": "Date is required",
+        "startime": "Start time is required",
+        "Endtime": "End time is required",
+        "schedulewith": "Schedule with is required"
+      },
+      "validate": {
+        "date": "Please select valid date",
+        "startime": "Please select valid start time",
+        "Endtime": "Please select valid end time"
+      }
+    },
+    "job": {
+      "jobTitle": "Job Title",
+      "editjob": "Edit Job Details",
+      "createJob": "Create Job",
+      "request": "Request",
+      "update": "Update",
+      "reqNo": "Requirement Number",
+      "noVacancies": "No. of Vacancies",
+      "minExp": "Min Experience",
+      "maxExp": "Max Experience",
+      "minSal": "Min Salary",
+      "maxSal": "Max Salary"
+    },
+    "reschedule": {
+      "suggestedTimeRequired": "Suggested time is required",
+      "durationRequired": "Duration is required",
+      "validate": {
+        "suggestedTimeFormatInvalid": "Please select a valid time format",
+        "durationFormatInvalid": "Please select a valid duration format"
+      }
+    },
+    "placeholder": {
+      "search": "Search"
+    },
+    "pagination": {
+      "showingView": "Showing data"
+    }
+  }
+}
