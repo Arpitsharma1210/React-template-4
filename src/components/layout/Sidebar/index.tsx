@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { Right } from "../../../redux/reducers/auth";
 import { routes } from "../../../utils";
 import HeaderIconPlaceholder from "../../assets/images/smallLogo.png";
-import DashboardIcon from "../../../assets/images/sidebarDashboardIcon.svg";
 
 import {
   /* sidebar logo styles*/
@@ -36,9 +35,9 @@ const TotalSidebarRoutes = [routes.dashboard];
 
 const menuItems = [
   {
-    menuId: "1",
-    IconImg: DashboardIcon,
-    menuname: messages?.sidebar?.dashboard,
+    key: 'Dashboard',
+    label: messages?.sidebar?.dashboard,
+    icon: 'dashboard',
     path: routes.dashboard,
     right: Right.DASHBOARD,
   },
@@ -78,20 +77,20 @@ const Sidebar = () => {
           {menuItems.map((menuItem, index) => (
             <StyledMenuOption key={index} className="menuItem_wrapper">
               <StyledLink to={menuItem.path}>
-                <StyledMenuItem id={menuItem.menuId} className="menuItem">
+                <StyledMenuItem id={menuItem.key} className="menuItem">
                   <StyledMenuIconOuter
                     selected={tab === menuItem.path}
                     className="menuItem_icon_container"
                   >
                     <StyledMenuImgContainer className="menuItem_img_container">
                       <StyledImg
-                        src={menuItem.IconImg}
+                        src={`assets/images/${menuItem.icon}.png`}
                         alt="menu icon"
                         className="menuItem_img"
                       />
                     </StyledMenuImgContainer>
                   </StyledMenuIconOuter>
-                  <StyledText>{menuItem.menuname}</StyledText>
+                  <StyledText>{menuItem.label}</StyledText>
                 </StyledMenuItem>
               </StyledLink>
             </StyledMenuOption>

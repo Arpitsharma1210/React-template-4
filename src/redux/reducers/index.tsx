@@ -7,7 +7,8 @@ import { APICALL,
 
   // Add more Action types here
 } from '../actions';
-
+import { MetaData , PagedEntity, getDefaultMetaData } from '../../models';
+import { createBasicReducer ,createPagedReducer} from './utils';
 export interface ReduxState {
   router: RouterState;
   auth: AuthState;
