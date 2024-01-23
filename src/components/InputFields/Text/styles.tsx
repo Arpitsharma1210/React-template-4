@@ -25,9 +25,9 @@ export const StyledTextField = styled(TextField)<{
   ${({ formatfor }) =>
     ((formatfor === "auth" || formatfor === "password") &&
       css`
-        width: 395px;
+        width: 395px !important;
         & .MuiInputBase-input {
-          padding: 20px;
+          padding: 20px !important;
           height: 25px;
           ${respondTo.extSm} {
             height: 20px;

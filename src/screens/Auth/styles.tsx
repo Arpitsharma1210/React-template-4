@@ -23,11 +23,11 @@ export const headerStyles = {
 };
 
 export const imgStyles = {
-  width: "40px",
+  width: "60px",
 };
 
 export const headerTextStyles = {
-  color: brand.secondary100,
+  color: brand.secondaryMain,
   fontWeight: fontWeight.bold,
   fontFamily: secondaryFontFamily,
   fontSize: "40px",
@@ -44,7 +44,7 @@ export const componentStyles = {
 };
 
 export const titleStyles = {
-  color: brand.secondary100,
+  color: brand.secondaryMain,
   fontFamily: secondaryFontFamily,
   fontWeight: fontWeight.bold,
   fontSize: "130px",

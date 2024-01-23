@@ -1,3 +1,9 @@
+
+export const brand = {
+  primaryMain: '#6063EA',
+  secondaryMain: '#242E4A',
+  textColour : '#1A1A1A',
+}
 export const colors = {
   grey: "#B5B7C0",
   grey5: "#E4E4E4",
@@ -52,7 +58,7 @@ export const colors = {
   yellow30: "#FFE177",
   yellow50: "#FCF0BB",
   yellowGradient:
-    "linear-gradient(201deg, #FFF3AC 3.14%, rgba(245, 217, 115, 0.18) 86.04%)",
+    `linear-gradient(201deg, ${brand.primaryMain} 3.14%, ${brand.secondaryMain} 86.04%)`,
 
   boxShadow: "0px 10px 60px 0px rgba(226, 236, 249, 0.50)",
 
@@ -70,8 +76,4 @@ export const colors = {
     tableBorder : '#E9E7FD',
 };
 
-export const brand = {
-  primaryMain: "#FEF8D3",
-  secondaryMain: "#FBDD24",
-  secondary100: "#201F29",
-};
+

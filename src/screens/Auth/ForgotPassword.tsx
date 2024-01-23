@@ -13,6 +13,7 @@ import { useFormReducer } from "../../hooks";
 import { RESET_PASSWORD_REQUEST_LINK } from "../../api";
 import { apiCall } from "../../redux/actions";
 import messages from "../../messages";
+import AuthWrapper from "./AuthWrapper";
 
 const validators = {
   email: [
@@ -75,7 +76,7 @@ const ForgotPassword = () => {
       });
 
   return (
-    <>
+    <AuthWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack direction="row" spacing={2}>
           {connectField("email", {
@@ -86,9 +87,7 @@ const ForgotPassword = () => {
               messages?.company?.domain,
           })(Textfield)}
           <div style={{ marginTop: "23px", display: "flex" }}>
-            <Button type="submit">
-              {messages?.forgotPassword?.btnText}
-            </Button>
+            <Button type="submit">{messages?.forgotPassword?.btnText}</Button>
           </div>
         </Stack>
       </form>
@@ -99,7 +98,7 @@ const ForgotPassword = () => {
       >
         {popMsg}
       </InfoPopup>
-    </>
+    </AuthWrapper>
   );
 };
 

@@ -6,6 +6,8 @@ import auth, { AuthState } from "./auth";
 export interface ReduxState {
   router: RouterState;
   auth: AuthState;
+    // Add more State here
+
 }
 
 const createRootReducer = (history: History): Reducer =>

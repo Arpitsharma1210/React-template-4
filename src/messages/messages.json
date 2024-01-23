@@ -4,8 +4,8 @@
       "domain": "memorres.com",
       "welcomeMessage": "Welcome",
       "companyName": "Noah",
-      "companyTitle": "Noah is here.",
-      "companyTitle2": "Levitate!"
+      "companyTitle": "",
+      "companyTitle2": ""
     },
     "general": {
       "errors": {
@@ -208,6 +208,7 @@
       }
     },
     "heading": {
+      "blank":"",
       "jobDescription": "Job description",
       "responsibilities": "Responsibilities",
       "skills": "Skills",

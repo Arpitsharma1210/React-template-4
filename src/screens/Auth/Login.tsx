@@ -15,7 +15,8 @@ import { useFormReducer } from "../../hooks/";
 import { colors } from "../../theme/style.palette.js";
 import GoogleIcon from "../../assets/images/googleIcon.svg";
 import messages from "../../messages";
-import { push } from "connected-react-router";
+import { push, replace } from "connected-react-router";
+import AuthWrapper from "./AuthWrapper";
 
 const validators = {
   email: [
@@ -53,15 +54,14 @@ const Login = () => {
 
   const onSubmit = (data: any) =>
     new Promise<any>((resolve, reject) => {
-
-      reduxDispatch(push(routes.dashboard))
+      history.push(routes.dashboard);
     })
       .catch((error) => {
         failLoginHandler(error);
       });
 
   return (
-    <>
+    <AuthWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack direction="row">
           <Stack
@@ -104,7 +104,7 @@ const Login = () => {
       >
         {popMsg}
       </InfoPopup>
-    </>
+      </AuthWrapper>
   );
 };
 

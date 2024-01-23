@@ -35,7 +35,7 @@ export const StyledLogoContainer = styled.div`
 
 export const StyledLineBreak = styled.div`
   width: 100%;
-  border: 1px solid ${brand.secondary100};
+  border: 1px solid ${brand.secondaryMain};
   margin: 35px 0px 35px 0px;
   border-radius: 20px;
 `;
@@ -132,4 +132,8 @@ export const StyledText = styled.p`
 export const StyledLink = styled(Link)`
   color: inherit;
   text-decoration: none;
+`;
+
+export const StyledProfileContainer = styled.div`
+  cursor: pointer;
 `;

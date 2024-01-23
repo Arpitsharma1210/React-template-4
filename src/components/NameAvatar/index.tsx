@@ -43,6 +43,7 @@ function stringAvatar(name: string, styles: Record<any, any>) {
       sx: {
         ...styles,
       },
+      children: "",
     };
   }
   return {
@@ -50,8 +51,9 @@ function stringAvatar(name: string, styles: Record<any, any>) {
       ...styles,
       bgcolor: stringToColor(name),
     },
-    children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+    children: name && name.includes(" ") ? `${name.split(" ")[0][0]}${name.split(" ")[1][0]}` : "",
   };
 }
+
 
 export default NameAvatar;

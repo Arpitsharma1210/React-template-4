@@ -16,6 +16,7 @@ import {
   passwordValidator,
   routes,
 } from "../../utils";
+import AuthWrapper from "./AuthWrapper";
 
 const validators = {
   password: [
@@ -79,7 +80,7 @@ const ResetPassword = () => {
       });
 
   return (
-    <>
+    <AuthWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack direction="row" alignItems="flex-start">
           <Stack
@@ -113,7 +114,7 @@ const ResetPassword = () => {
       >
         {infoMsg}
       </InfoPopup>
-    </>
+    </AuthWrapper>
   );
 };
 

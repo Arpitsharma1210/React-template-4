@@ -63,7 +63,7 @@ export function* handleResponse(
        * but sometimes we want to ignore 403's,
        * especially when logging in
        * */
-      yield put(hideLoader());
+      yield put(logout());
     } else if (error) {
       const body = yield response.json();
       yield put(hideLoader());
@@ -208,11 +208,13 @@ function* doFetchBaseData(): Generator<any> {
         /** @Note Add actions to fetch initial data */
         yield put(fetchUserProfile());
       },
-      function* () {},
+      function* () {
+        yield put(logout());
+      },
       true
     );
   } else {
-    yield put(hideLoader());
+    yield put(logout());
   }
 }
 

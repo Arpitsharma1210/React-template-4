@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Typography } from "@mui/material";
 import {
   containerStyles,
@@ -12,17 +12,34 @@ import {
   bannerImgStyles,
   HoverAnimationWrapper,
 } from "./styles";
-import HeaderIcon from "../../assets/images/noah_logo.svg";
-import NoahBanner from "../../assets/images/noah_banner.png";
+import HeaderIconPlaceholder from "../../assets/images/smallLogo.png";
 import messages from "../../messages";
 
 const AuthWrapper: React.FC<{ children: any }> = ({ children }) => {
+  const [headerImage, setHeaderImage] = useState<string | null>(null);
+
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setHeaderImage(imageUrl);
+    }
+  };
+
   return (
     <div className="AuthWrapper_screen" style={containerStyles}>
       <header style={headerStyles}>
-        <img style={imgStyles} src={HeaderIcon} alt="Noah" />
+        <label htmlFor="headerImageInput">
+          <img
+            style={imgStyles}
+            src={"../../assets/images/smallLogo.png"}
+            alt="Header Icon"
+          />
+        </label>
+        
         <Typography style={headerTextStyles}>
-          {messages?.company?.companyName}
+          {messages?.heading?.blank}
         </Typography>
       </header>
       <div style={componentStyles} className="auth_screen_comp_container">
@@ -30,13 +47,13 @@ const AuthWrapper: React.FC<{ children: any }> = ({ children }) => {
       </div>
 
       <Typography sx={titleStyles}>
-        <span style={titleModStyles}>{messages?.company?.companyTitle}</span>{" "}
+        <span style={titleModStyles}>{messages?.company?.companyTitle}</span>
         {messages?.company?.companyTitle2}
       </Typography>
 
       <div style={bannerContainerStyles}>
         <HoverAnimationWrapper>
-          <img style={bannerImgStyles} src={NoahBanner} alt="banner" />
+          {/* <img style={bannerImgStyles} src={NoahBanner} alt="banner" /> */}
         </HoverAnimationWrapper>
       </div>
     </div>

@@ -19,6 +19,8 @@ export const UPDATE_PROFILE = "UPDATE_PROFILE";
 export const SHOW_LOADER = "SHOW_LOADER";
 export const HIDE_LOADER = "HIDE_LOADER";
 
+// Add Actions Here
+
 /** @Note Action types for pages entities */
 
 export interface AnyAction {

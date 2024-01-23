@@ -1,12 +1,12 @@
 {
-  "name": "noah-web-panel",
+  "name": "React-templatae-4",
   "version": "1.0.0",
   "description": "Noah web panel",
   "main": "src/index.tsx",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:MemorresR/noah-web-panel.git",
-    "baseUrl": "https://github.com/MemorresR/noah-web-panel.git"
+    "url": "git+ssh://git@github.com:MemorresR/{project_name}.git",
+    "baseUrl": "https://github.com/MemorresR/{project_name}.git"
   },
   "author": {
     "name": "Memorres",
@@ -20,9 +20,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MemorresR/noah-web-panel.git/issues"
+    "url": "https://github.com/MemorresR/{project_name}.git/issues"
   },
-  "homepage": "https://github.com/MemorresR/noah-web-panel.git#readme",
+  "homepage": "https://github.com/MemorresR/{project_name}.git#readme",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "scripts": {

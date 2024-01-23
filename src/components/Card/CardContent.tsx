@@ -2,6 +2,7 @@ import React from "react";
 import { CardContent } from "@mui/material";
 interface Props {
   children: any;
+  style?:{};
 }
 
 const Card_Content: React.FC<Props> = ({ children }) => {

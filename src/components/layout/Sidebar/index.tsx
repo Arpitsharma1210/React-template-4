@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Right } from "../../../redux/reducers/auth";
 import { routes } from "../../../utils";
-import NoahLogo from "../../../assets/images/noah_logo.svg";
+import HeaderIconPlaceholder from "../../assets/images/smallLogo.png";
 import DashboardIcon from "../../../assets/images/sidebarDashboardIcon.svg";
 
 import {
@@ -27,13 +27,12 @@ import {
   StyledImg,
   StyledLink,
   AllMenuItems,
+  StyledProfileContainer,
 } from "./styles";
 import { NameAvatar } from "../..";
 import messages from "../../../messages";
 
-const TotalSidebarRoutes = [
-  routes.dashboard,
-];
+const TotalSidebarRoutes = [routes.dashboard];
 
 const menuItems = [
   {
@@ -43,6 +42,7 @@ const menuItems = [
     path: routes.dashboard,
     right: Right.DASHBOARD,
   },
+  // Add sidebar menu items here
 ];
 
 const getSelectedTab = () => {
@@ -70,46 +70,46 @@ const Sidebar = () => {
   return (
     <StyledSidebar className="sidebar">
       <StyledLogoContainer className="sidebar_logo">
-        <StyledImg src={NoahLogo} alt="sidebar website logo" />
+        <StyledImg src={"../../assets/images/smallLogo.png"} alt="sidebar logo" />
       </StyledLogoContainer>
       <StyledLineBreak className="sidebar_logo_linebreak"></StyledLineBreak>
       <AllMenuItems className="allMenu_items">
         <StyledMenuItemContainer className="menubar">
-          {menuItems
-            .map((menuItem, index) => (
-              <StyledMenuOption key={index} className="menuItem_wrapper">
-                <StyledLink to={menuItem.path}>
-                  <StyledMenuItem id={menuItem.menuId} className="menuItem">
-                    <StyledMenuIconOuter
-                      selected={tab === menuItem.path}
-                      className="menuItem_icon_container"
-                    >
-                      <StyledMenuImgContainer className="menuItem_img_container">
-                        <StyledImg
-                          src={menuItem.IconImg}
-                          alt="menu icon"
-                          className="menuItem_img"
-                        />
-                      </StyledMenuImgContainer>
-                    </StyledMenuIconOuter>
-                    <StyledText>{menuItem.menuname}</StyledText>
-                  </StyledMenuItem>
-                </StyledLink>
-              </StyledMenuOption>
-            ))}
+          {menuItems.map((menuItem, index) => (
+            <StyledMenuOption key={index} className="menuItem_wrapper">
+              <StyledLink to={menuItem.path}>
+                <StyledMenuItem id={menuItem.menuId} className="menuItem">
+                  <StyledMenuIconOuter
+                    selected={tab === menuItem.path}
+                    className="menuItem_icon_container"
+                  >
+                    <StyledMenuImgContainer className="menuItem_img_container">
+                      <StyledImg
+                        src={menuItem.IconImg}
+                        alt="menu icon"
+                        className="menuItem_img"
+                      />
+                    </StyledMenuImgContainer>
+                  </StyledMenuIconOuter>
+                  <StyledText>{menuItem.menuname}</StyledText>
+                </StyledMenuItem>
+              </StyledLink>
+            </StyledMenuOption>
+          ))}
         </StyledMenuItemContainer>
 
         <StyledSidebarEnd className="sidebar_end">
-          
-            
+          <StyledLink to={routes.profile}>
+            <StyledProfileContainer className="sidebar_profile">
               <NameAvatar
-                name=""
+                alt="sidebar profile icon"
+                name={""}
                 height={65}
                 width={65}
                 fontSize={24}
               />
-            
-          
+            </StyledProfileContainer>
+          </StyledLink>
         </StyledSidebarEnd>
       </AllMenuItems>
     </StyledSidebar>

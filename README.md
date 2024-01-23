@@ -1,4 +1,4 @@
-Noah Web Panel
+[project_name]
 =========================
 
 ## Dependencies

@@ -73,7 +73,7 @@ export const StyledSelect = styled(Select)<{
         & .MuiInputBase-input {
           display: flex;
           align-items: center;
-          padding: 20px;
+          padding: 20px !important;
           height: 25px !important;
           border-radius: 6px !important;
         }

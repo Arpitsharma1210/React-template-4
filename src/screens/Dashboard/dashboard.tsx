@@ -1,10 +1,23 @@
 import React from "react";
-import { Table, Card, CardContent } from "../../components";
+import {
+  Table,
+  Header,
+  Card,
+  CardContent,
+} from "../../components";
+import messages from "../../messages";
 import { Container } from "../../components/layout";
 
 const Dashboard = () => {
+
   return (
-    <Container>
+    <>
+   <Container>
+   <div style={{ marginTop: "-35px" }} className="margin_adjust">
+        <Header />
+        
+      </div>
+
       <div className="mb35" style={{ marginBottom: "35px" }}>
         <Card>
           <CardContent>
@@ -12,8 +25,15 @@ const Dashboard = () => {
           </CardContent>
         </Card>
       </div>
-      <Table tableName="" data={[]} columnData={[]} />
-    </Container>
+      
+      {/* <Table
+        tableName= {messages?.heading?.blank}
+        data={[]}
+        columnData={[]}
+      /> */}
+   </Container>
+      
+    </>
   );
 };
 

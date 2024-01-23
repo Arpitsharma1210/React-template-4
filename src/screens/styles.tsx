@@ -7,7 +7,7 @@ import {
 } from "../theme/style.typography";
 
 export const StyledCandidateHeader = styled.h3`
-  color: ${brand.secondary100};
+  color: ${brand.secondaryMain};
   font-family: ${secondaryFontFamily};
   font-size: ${fontSize.h3};
   font-weight: ${fontWeight.medium};

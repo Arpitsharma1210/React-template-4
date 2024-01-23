@@ -57,7 +57,7 @@ const theme = createTheme({
       main: brand.secondaryMain,
     },
     secondary: {
-      main: brand.secondary100,
+      main: brand.secondaryMain,
     },
   },
 
@@ -74,16 +74,16 @@ const theme = createTheme({
           padding: "20px 32px",
           "&.MuiButton-contained": {
             color: `${colors.white}`,
-            backgroundColor: `${brand.secondary100}`,
+            backgroundColor: `${brand.secondaryMain}`,
             "&:hover": {
-              color: `${brand.secondary100}`,
+              color: `${brand.primaryMain}`,
               backgroundColor: `${brand.secondaryMain}`,
             },
           },
         },
         outlined: {
-          color: `${brand.secondary100}`,
-          borderColor: `${brand.secondary100}`,
+          color: `${brand.secondaryMain}`,
+          borderColor: `${brand.secondaryMain}`,
           "&:hover": {
             borderColor: `${colors.yellow25}`,
             backgroundColor: `${brand.primaryMain}`,
@@ -92,7 +92,7 @@ const theme = createTheme({
         text: {
           height: "unset",
           padding: "5px 10px",
-          color: `${brand.secondary100}`,
+          color: `${brand.secondaryMain}`,
           "&:hover": {
             backgroundColor: `${brand.primaryMain}`,
           },

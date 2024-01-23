@@ -35,7 +35,7 @@ export const StyledHeader = styled.header`
   margin-bottom: 5px;
 
   & h2 {
-    color: ${brand.secondary100};
+    color: ${brand.secondaryMain};
     font-family: ${secondaryFontFamily};
     font-size: ${fontSize.h2};
     font-weight: ${fontWeight.bold};

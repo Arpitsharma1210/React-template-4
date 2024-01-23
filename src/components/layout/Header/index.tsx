@@ -16,6 +16,7 @@ type Buttons = {
   name: string;
   handler: any;
   logo?: any;
+  onClick?: any;
 };
 
 export interface Props {
@@ -25,6 +26,7 @@ export interface Props {
   openButtonOnClick?: any;
   chipData?: string;
   buttons?: Buttons[];
+  onClick?: (event: MouseEvent) => void;
 }
 
 export const Header: React.FC<Props> = ({
@@ -34,6 +36,7 @@ export const Header: React.FC<Props> = ({
   openButtonOnClick,
   chipData,
   buttons,
+  onClick,
 }) => {
   const history = useHistory();
 

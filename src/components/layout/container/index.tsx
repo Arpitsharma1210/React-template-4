@@ -1,13 +1,15 @@
 import React from "react";
-import {
-  StyledChildrenContainer,
-  StyledContainer,
-  StyledContainerProps,
-  StyledContentWrapper,
-  StyledSideBarContainer,
-} from "./styles";
-import Header, {Props as HeaderProps} from '../Header';
+import Header, { Props as HeaderProps } from "../Header";
 import Sidebar from "../Sidebar";
+import Notifications from "../../Notifications";
+import { styled } from "styled-components";
+import { colors } from "../../../theme/style.palette";
+import {
+  StyledContainerProps,
+  StyledScreenContainer,
+  StyledScreenComponentContainer,
+  StyledNotificationContainer,
+} from "./styles";
 interface Props extends StyledContainerProps, HeaderProps {
   children?: JSX.Element | JSX.Element[];
   hideHeader?: boolean;
@@ -23,20 +25,15 @@ const Container: React.FC<Props> = ({
   noPadding,
   ...styleProps
 }) => (
-  <StyledContainer
-    data-testid="container-StyledContainer-div"
-    noPadding={noPadding}
-    {...styleProps}
-  >
-    {!hideSidebar && (
-      <StyledSideBarContainer>
-        <Sidebar />
-      </StyledSideBarContainer>
-    )}
-    <StyledContentWrapper noPadding={noPadding}>
-      {!hideHeader && <Header navigation= {navigation} />}
-      <StyledChildrenContainer>{children}</StyledChildrenContainer>
-    </StyledContentWrapper>
-  </StyledContainer>
+  <StyledScreenContainer>
+    {!hideSidebar && <Sidebar />}
+    <StyledScreenComponentContainer className="screen_comp">
+      <StyledNotificationContainer>
+        <Notifications />
+      </StyledNotificationContainer>
+      {!hideHeader && <Header navigation={navigation} />}
+      {children}
+    </StyledScreenComponentContainer>
+  </StyledScreenContainer>
 );
 export default Container;

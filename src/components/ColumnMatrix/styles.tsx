@@ -5,6 +5,7 @@ import { baseFontFamily, fontSize } from "../../theme/style.typography";
 export const ColumnsContainer = styled.div`
   display: flex;
   column-gap: 175px;
+  margin-left: 40px;
 `;
 
 export const Column = styled.div`

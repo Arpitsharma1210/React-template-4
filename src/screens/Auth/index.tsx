@@ -17,6 +17,7 @@ const Auth = () => {
             <Route path={routes.login} component={Login} />
             <Route path={routes.forgotPassword} component={ForgotPassword} />
             <Route path={routes.resetPassword} component={ResetPassword} />
+            <Route path={routes.userRegister} component={UserRegistration} />
             <Route path="*" component={() => <Redirect to={routes.login} />} />
           </Switch>
         </AuthWrapper>
