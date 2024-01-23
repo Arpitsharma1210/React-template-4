@@ -18,7 +18,7 @@ import { routes } from "../utils/routes";
 
 const Profile = () => {
     const staticData = {
-        "First Name": "efwef",
+        "First Name": "",
         "Last Name": "",
         "Mobile Number":"",
         Email: "",
