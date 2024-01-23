@@ -17,6 +17,8 @@ export const DELETE_USER = "/api/user";
 export const OPTIONS_DEPARTMENT = "/api/department";
 export const UPDATE_USER = "/api/user";
 
+// Add your api calls here
+
 export const apiCall = (
   endpoint: string,
   method = HttpMethods.GET,
