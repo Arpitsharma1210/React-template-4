@@ -21,5 +21,6 @@ const createRootReducer = (history: History): Reducer =>
     router: connectRouter(history),
     /* End Third party reducers */
     auth,
+      // Add more Reducers here
   });
 export default createRootReducer;
