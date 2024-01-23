@@ -3,6 +3,11 @@ import { connectRouter, RouterState } from "connected-react-router";
 import { History } from "history";
 import auth, { AuthState } from "./auth";
 
+import { APICALL,
+
+  // Add more Action types here
+} from '../actions';
+
 export interface ReduxState {
   router: RouterState;
   auth: AuthState;
