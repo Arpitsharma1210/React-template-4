@@ -18,8 +18,8 @@ type ModalReducer<T> = (state: ModalState<T>, action: ModalAction<T>) => ModalSt
 
 interface ModalHook<T> extends ModalState<T> {
     reset:()=>void;
-    showPoup:(metaData?:Partial<T>)=>void;
-    hidePoup:()=>void;
+    showPopup:(metaData?:Partial<T>)=>void;
+    hidePopup:()=>void;
 }
 
 export const createModalReducer = <T extends unknown>(
@@ -72,15 +72,15 @@ export const usePopupReducer = <T extends unknown>(
     dispatch({ type: RESET_MODAL });
   };
 
-  const showPoup = (metaData?: Partial<T>) => {
+  const showPopup = (metaData?: Partial<T>) => {
     dispatch({ type: SHOW_MODAL, payload: { metaData } });
   };
 
-  const hidePoup = () => {
+  const hidePopup = () => {
     dispatch({ type: HIDE_MODAL });
   };
 
   return {
-    ...state, reset, showPoup, hidePoup,
+    ...state, reset, showPopup, hidePopup,
   };
 };
