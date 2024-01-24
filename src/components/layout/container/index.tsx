@@ -1,7 +1,7 @@
 import React from "react";
 import Header, { Props as HeaderProps } from "../Header";
 import Sidebar from "../Sidebar";
-import Notifications from "../../Notifications";
+import Notifications from "../../notifications";
 import { styled } from "styled-components";
 import { colors } from "../../../theme/style.palette";
 import {
