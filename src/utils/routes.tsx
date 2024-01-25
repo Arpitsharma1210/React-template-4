@@ -5,10 +5,11 @@ const createResourceRoutes = (resource: string) => ({
 });
 
 export const routes = {
+  root: '/',
   login: "/login",
   forgotPassword: "/forgot-password",
   resetPassword: "/reset-password/:token",
-  dashboard: "/dashboard",
+  dashboard: {root:'/dashboard'},
   vacancyDetails: "/dashboard/vacancy-details",
   profile: "/profile",
   requirements: "/requirements",
@@ -25,3 +26,5 @@ export const routes = {
   userRegister: "/register/:token",
 
 };
+
+export default routes;

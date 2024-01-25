@@ -5,9 +5,9 @@ import FailIcon from "../../assets/images/failPopup.png";
 import CloseIcon from "../../assets/images/closeIcon2.svg";
 
 interface Props {
-  text: string;
+  text?: string;
   subText?: string;
-  type: "success" | "fail";
+  type?: "success" | "fail";
   closeToast?: any;
 }
 

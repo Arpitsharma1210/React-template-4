@@ -38,7 +38,7 @@ const Login = () => {
   let PopupTimer = 3000;
 
   const successfulLoginHandler = () => {
-    history.replace(routes.dashboard);
+    history.replace(routes.dashboard.root);
   };
 
   const failLoginHandler = (error: Record<any, any>) => {
@@ -54,7 +54,7 @@ const Login = () => {
 
   const onSubmit = (data: any) =>
     new Promise<any>((resolve, reject) => {
-      history.push(routes.dashboard);
+      history.push(routes.dashboard.root);
     })
       .catch((error) => {
         failLoginHandler(error);

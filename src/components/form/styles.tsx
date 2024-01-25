@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Alert, Grid } from "@mui/material"
 import { colors, brand } from "../../theme/style.palette";
 import {
   fontSize,
@@ -41,3 +42,20 @@ export const UploadButton = styled.button`
     width: 100%;
   }
 `;
+
+export const StyledForm = styled.form`
+    
+`
+
+export const StyledFormRow = styled(Grid)`
+    gap : 16px;
+    margin-bottom : 16px;
+`
+export const StyledFormRowItem = styled(Grid)`
+    display : flex;
+    flex : 1;
+`
+
+export const StyledFormError = styled(Alert)`
+    width: 100% !important
+`

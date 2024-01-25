@@ -18,7 +18,6 @@ const validators = {
 
 const FeedbackPopup: React.FC<Props> = ({
   onSubmit,
-  modalOpenState,
   modalStateHandler,
 }) => {
   const { submitting, hasError, handleSubmit, connectField } =
@@ -26,7 +25,6 @@ const FeedbackPopup: React.FC<Props> = ({
 
   return (
     <ModalWrapper
-      modalOpenState={modalOpenState}
       modalStateHandler={modalStateHandler}
     >
       <form onSubmit={handleSubmit(onSubmit)}>

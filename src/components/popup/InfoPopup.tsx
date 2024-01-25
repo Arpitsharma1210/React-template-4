@@ -27,7 +27,6 @@ const InfoPopup: React.FC<Props> = ({
     const iconLink = success ? successIcon : failIcon;
     return (
         <ModalWrapper
-            modalOpenState={modalOpenState}
             modalStateHandler={modalStateHandler}
             disableClose={true}
         >

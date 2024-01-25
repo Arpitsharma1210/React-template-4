@@ -1,21 +1,36 @@
 import * as React from "react";
-import { Modal as MuiModal} from "@mui/material";
+import { Modal as MuiModal } from "@mui/material";
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import {
   StyledModalContentBox,
   StyledCloseIcon,
   closeIconContainerStyles,
   StyledSliderModalContentBox,
+  StyledCloseContainer,
+  StyledContainer,
+  StyledHeaderContainer,
+  StyledHeading,
+  StyledHeadingImg,
+  StyledHeadingImgContainer,
+  StyledSubHeading,
 } from "./styles";
+import { colors } from "../../theme/style.palette";
 import CloseIconImg from "../../assets/images/closeIcon.svg";
+import Card from "../card";
 
 interface Props {
+  show?: boolean;
   disableClose?: boolean;
   edgy?: boolean;
-  modalOpenState: boolean;
   modalStateHandler: any;
-  children: any;
   slider?: boolean;
   style?: {};
+  onClose?: () => void;
+  children?: JSX.Element | JSX.Element[];
+  heading?: string;
+  headingImgSrc?: string;
+  subHeading?: string;
+  fitContent?: boolean;
 }
 
 const CloseIcon: React.FC<{ handleClose: any }> = ({ handleClose }) => (
@@ -29,58 +44,54 @@ const CloseIcon: React.FC<{ handleClose: any }> = ({ handleClose }) => (
 );
 
 const Modal: React.FC<Props> = ({
-  edgy,
-  slider,
-  disableClose,
-  modalOpenState,
-  modalStateHandler,
+  show,
   children,
-  style,
+  onClose,
+  heading,
+  subHeading,
+  fitContent,
+  headingImgSrc,
 }) => {
-  const [transform, setTransform] = React.useState<string>("100%");
-
-  const ModalCloseHandler = () => {
-    if (slider) {
-      setTransform("100%");
-      setTimeout(() => modalStateHandler(false), 500);
-    } else {
-      modalStateHandler(false);
-    }
-  };
-
-  /* slide in on modal open*/
-  React.useEffect(() => {
-    if (slider && modalOpenState) {
-      setTransform("0%");
-    }
-  }, [modalOpenState]);
 
   return (
-    <MuiModal open={modalOpenState} onClose={ModalCloseHandler}>
-      {!slider ? (
-        <StyledModalContentBox
-          className="modal_content"
-          $edgy={edgy}
-          style={{ ...style }}
-        >
-          {!disableClose && <CloseIcon handleClose={ModalCloseHandler} />}
-          {children}
-        </StyledModalContentBox>
-      ) : (
-        <StyledSliderModalContentBox
-          className="modal_content"
-          $edgy={edgy}
-          style={{
-            ...style,
-            transform: `translateX(${transform})`,
-          }}
-        >
-          {!disableClose && <CloseIcon handleClose={ModalCloseHandler} />}
-          {children}
-        </StyledSliderModalContentBox>
-      )}
+    <MuiModal
+        open={!!show}
+        onClose={onClose}
+    >
+        <StyledContainer fitContent={fitContent}>
+            <Card
+                contentCss={{
+                    overflowY: 'auto',
+                    maxHeight: 'calc(100vh - 300px)'
+                }}
+                header={(
+                    <StyledHeaderContainer>
+                        {heading && <StyledHeading variant="h3">
+                            {heading}
+                        </StyledHeading>}
+                        {subHeading && <StyledSubHeading variant="body1">
+                            {subHeading}
+                        </StyledSubHeading>}
+                        {headingImgSrc && (
+                            <StyledHeadingImgContainer>
+                                <StyledHeadingImg src={headingImgSrc}/>
+                            </StyledHeadingImgContainer>
+                        )}
+                        <StyledCloseContainer onClick={onClose}>
+                            <CloseRoundedIcon
+                                style={{
+                                    color: colors.grey100
+                                }}
+                            />
+                        </StyledCloseContainer>
+                    </StyledHeaderContainer>
+                )}
+            >
+                {children}
+            </Card>
+        </StyledContainer>
     </MuiModal>
-  );
+)
 };
 
 export default Modal;

@@ -1,9 +1,10 @@
 export { default as OnlyWith } from "./onlyWith";
 
 /* FORMS */
-export { default as AddCandidateForm } from "./forms/candidate";
-export { default as InterviewForm } from "./forms/interview";
-export { default as JobForm } from "./forms/job";
+export { default as AddCandidateForm } from "./form/candidate";
+export { default as InterviewForm } from "./form/interview";
+export { default as JobForm } from "./form/job";
+export * from './form';
 
 /* POPUPS */
 export { default as InfoPopup } from "./popup/InfoPopup";
@@ -35,7 +36,7 @@ export { default as Button } from "./button";
 export { default as ChipButton } from "./chipButton";
 export { default as Dropdown } from "./dropdown";
 export { default as InputLabel } from "./Label";
-export { default as Switch } from "./switch";
+export { default as Switch } from "./switchInput";
 export { default as DataItem } from "./dataItem";
 export { default as Table } from "./table";
 export { default as Tooltip } from "./tooltip";

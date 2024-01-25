@@ -103,7 +103,6 @@ const JobForm: React.FC<Props> = ({
     <ModalWrapper
       edgy={true}
       slider={true}
-      modalOpenState={formOpen}
       modalStateHandler={formShowHandler}
       style={{ height: "100%", overflowY: "scroll", boxSizing: "border-box" }}
     >

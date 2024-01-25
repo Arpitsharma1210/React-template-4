@@ -18,9 +18,8 @@ const Screens: React.FC = () => (
         <Route path={routes.forgotPassword} component={ForgotPassword} />
         <Route path={routes.resetPassword} component={ResetPassword} />
         <Route path={routes.userRegister} component={UserRegistration} />
-        <Route path={routes.dashboard} component={Dashboard} />
+        <Route path={routes.dashboard.root} component={Dashboard} />
         <Route path={routes.profile} component={Profile} />
-        <Redirect path="*" to={routes.dashboard} />
       </Switch>
 
       {/* <Route component={() => <Redirect to={routes.login} />} /> */}

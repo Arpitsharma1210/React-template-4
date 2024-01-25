@@ -32,6 +32,7 @@ import {
 import DemoImage from "../../assets/images/Demo.svg";
 import NoahLogo from "../../assets/images/logo_text.svg";
 import messages from "../../messages";
+import { push } from "connected-react-router";
 
 interface CustomAvatarProps {
   image: string | null;
@@ -123,16 +124,7 @@ const UserRegistration = () => {
 
   const onSubmit = async (data: any) =>
     new Promise<any>((resolve, reject) => {
-      reduxDispatch(
-        apiCall(`${REGISTER}/${token}`, resolve, reject, HttpMethods.POST, {
-          firstName: data?.fname,
-          lastName: data?.lname,
-          phone: data?.mobile,
-          designation: data?.designation,
-          password: md5(data?.password),
-          department: data?.department,
-        })
-      );
+      reduxDispatch(push(routes.dashboard.root));
     })
       .then((res) => successHandler())
       .catch((err) => {

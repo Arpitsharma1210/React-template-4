@@ -38,7 +38,7 @@ const menuItems = [
     key: 'Dashboard',
     label: messages?.sidebar?.dashboard,
     icon: 'dashboard',
-    path: routes.dashboard,
+    path: routes.dashboard.root,
     right: Right.DASHBOARD,
   },
   // Add sidebar menu items here
@@ -59,12 +59,12 @@ const Sidebar = () => {
   );
   const profile = useSelector((state: any) => state.profile);
 
-  React.useEffect(() => {
-    if (TotalSidebarRoutes.includes(location.pathname)) {
-      setSelectedTab(location.pathname);
-      setTab(getSelectedTab);
-    }
-  }, [location.pathname]);
+  // React.useEffect(() => {
+  //   if (TotalSidebarRoutes.includes(location.pathname)) {
+  //     setSelectedTab(location.pathname);
+  //     setTab(getSelectedTab);
+  //   }
+  // }, [location.pathname]);
 
   return (
     <StyledSidebar className="sidebar">

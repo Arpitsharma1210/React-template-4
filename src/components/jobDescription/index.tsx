@@ -29,7 +29,6 @@ const JD: React.FC<MyComponentProps> = ({
     <ModalWrapper
       edgy
       slider
-      modalOpenState={modalOpenState}
       modalStateHandler={modalStateHandler}
       style={{ height: "100%", overflowY: "scroll", boxSizing: "border-box" }}
     >

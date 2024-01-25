@@ -39,7 +39,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "..", "./build"),
     filename: "bundle.js",
-    publicPath: '/'
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -68,6 +68,5 @@ module.exports = {
       // default: false
       verbose: true,
     }),
-
   ],
 };

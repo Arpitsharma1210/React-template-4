@@ -2,13 +2,16 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { Chip } from "@mui/material";
 import { Button, ChipButton } from "../..";
-
+import { usePopupReducer } from '../../../hooks';
+import { useDispatch } from 'react-redux';
+import { goBack, push } from 'connected-react-router';
 import {
   StyledComponentContainer,
   StyledNavigationContainer,
   StyledHeaderTextContainer,
   StyledHeader,
   StyledButtonsContainer,
+  StyledGoBackContainer,
 } from "./styles";
 import messages from "../../../messages";
 
@@ -20,6 +23,10 @@ type Buttons = {
 };
 
 export interface Props {
+  heading?: string;
+  headingCount?:(string | number);
+  showCount?: boolean;
+  showGoBack?: boolean;
   children?: any;
   navigation?: boolean;
   openButton?: boolean;
@@ -30,6 +37,8 @@ export interface Props {
 }
 
 export const Header: React.FC<Props> = ({
+  heading, headingCount,
+    showCount, showGoBack,
   children,
   navigation = false,
   openButton,
@@ -40,15 +49,26 @@ export const Header: React.FC<Props> = ({
 }) => {
   const history = useHistory();
 
-  const goBack = () => {
-    history.goBack();
-  };
+  const reduxDispatch = useDispatch();
+
+  const {
+    visibility: formVisibility,
+    showPopup: showForm,
+    hidePopup: hideForm
+} = usePopupReducer();
 
   return (
     <StyledComponentContainer>
       <header>
         {navigation && (
           <StyledNavigationContainer>
+             {showGoBack && <StyledGoBackContainer
+                    onClick={() => {
+                       reduxDispatch(goBack())
+                    }}
+                >
+                    
+                </StyledGoBackContainer>}
             <Button onClick={goBack} variant="text">
               &lt; {messages?.button?.back}
             </Button>
