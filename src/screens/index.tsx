@@ -22,7 +22,7 @@ const Screens: React.FC = () => (
         <Route path={routes.profile} component={Profile} />
       </Switch>
 
-      {/* <Route component={() => <Redirect to={routes.login} />} /> */}
+      <Route component={() => <Redirect to={routes.login} />} />
     </OnlyWith>
 
     <OnlyWith status={AuthenticationStatus.AUTHENTICATED}></OnlyWith>

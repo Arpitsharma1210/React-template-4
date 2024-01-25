@@ -22,7 +22,7 @@ interface Props {
   show?: boolean;
   disableClose?: boolean;
   edgy?: boolean;
-  modalStateHandler: any;
+  modalStateHandler?: any;
   slider?: boolean;
   style?: {};
   onClose?: () => void;

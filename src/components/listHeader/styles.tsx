@@ -14,7 +14,7 @@ export const StyledContainer = styled.div`
 `
 
 export const StyledActionItemContainer = styled.div<{justifyContent?:string}>`
-    display: flex;
+    // display: flex;
     flex: 1;
     align-items: center;
     justify-content: ${({justifyContent})=>justifyContent || 'flex-start'};

@@ -127,8 +127,8 @@ export const StyledTableBody = styled(TableBody)`
 
 `
 export const StyledCellContainer = styled.div`
-    display: flex;
-    column-gap: 8px;
+    // display: flex;
+    // column-gap: 8px;
 `
 export const StyledLoadmoreContainer = styled.div`
     display: flex;

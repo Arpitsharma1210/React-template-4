@@ -29,4 +29,5 @@ export const StyledCtaContainer = styled.div`
     gap: 24px;
     align-items: center;
     justify-content: flex-end;
+    padding: 16px;
 `

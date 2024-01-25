@@ -31,16 +31,15 @@ import {
 import { NameAvatar } from "../..";
 import messages from "../../../messages";
 
-const TotalSidebarRoutes = [routes.dashboard];
-
 const menuItems = [
   {
-    key: 'Dashboard',
-    label: messages?.sidebar?.dashboard,
-    icon: 'dashboard',
+    key: "Dashboard",
+    label: messages?.sidebar?.menuItems?.dashboard,
+    icon: "dashboard",
     path: routes.dashboard.root,
     right: Right.DASHBOARD,
   },
+
   // Add sidebar menu items here
 ];
 
@@ -57,19 +56,21 @@ const Sidebar = () => {
   const [tab, setTab] = React.useState<string>(
     getSelectedTab() || location.pathname
   );
+  React.useEffect(() => {
+    if (location.pathname) {
+      setSelectedTab(location.pathname);
+      setTab(getSelectedTab);
+    }
+  }, [location.pathname]);
   const profile = useSelector((state: any) => state.profile);
-
-  // React.useEffect(() => {
-  //   if (TotalSidebarRoutes.includes(location.pathname)) {
-  //     setSelectedTab(location.pathname);
-  //     setTab(getSelectedTab);
-  //   }
-  // }, [location.pathname]);
 
   return (
     <StyledSidebar className="sidebar">
       <StyledLogoContainer className="sidebar_logo">
-        <StyledImg src={"../../assets/images/smallLogo.png"} alt="sidebar logo" />
+        <StyledImg
+          src={"../../assets/images/smallLogo.png"}
+          alt="sidebar logo"
+        />
       </StyledLogoContainer>
       <StyledLineBreak className="sidebar_logo_linebreak"></StyledLineBreak>
       <AllMenuItems className="allMenu_items">

@@ -92,8 +92,8 @@ export const StyledMenuIconOuter = styled.div<{ selected?: boolean }>`
   ${({ selected }) =>
     selected &&
     css`
-      border: 1px solid ${colors.yellow25};
-      background: ${colors.yellowGradient};
+      border: 1px solid ${brand.primaryMain};
+      background: ${brand.secondaryMain};
     `}
 `;
 
