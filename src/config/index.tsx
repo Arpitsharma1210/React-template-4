@@ -17,22 +17,22 @@ const featureLevelValue = Object.freeze({
 
 const prod: Config = Object.freeze({
   featureLevel: FeatureLevel.production,
-  apiHost: "https://d3dzxfrjypwxb1.cloudfront.net",
+  apiHost: "",
 });
 
 const stage: Config = Object.freeze({
   featureLevel: FeatureLevel.staging,
-  apiHost: "https://d3dzxfrjypwxb1.cloudfront.net",
+  apiHost: "",
 });
 
 const dev: Config = Object.freeze({
   featureLevel: FeatureLevel.development,
-  apiHost: "http://35.154.173.154:5000",
+  apiHost: "",
 });
 
 const local: Config = Object.freeze({
   featureLevel: FeatureLevel.staging,
-  apiHost: "http://localhost:5000",
+  apiHost: "",
 });
 
 let env: Config;
