@@ -85,7 +85,7 @@ const Sidebar = () => {
                   >
                     <StyledMenuImgContainer className="menuItem_img_container">
                       <StyledImg
-                        src={`assets/images/${menuItem.icon}.png`}
+                        src={`/assets/images/${menuItem.icon}.png`}
                         alt="menu icon"
                         className="menuItem_img"
                       />
