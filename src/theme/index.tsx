@@ -85,7 +85,7 @@ const theme = createTheme({
           color: `${brand.secondaryMain}`,
           borderColor: `${brand.secondaryMain}`,
           "&:hover": {
-            borderColor: `${colors.yellow25}`,
+            borderColor: `${brand.secondaryMain}`,
             backgroundColor: `${brand.primaryMain}`,
           },
         },
@@ -175,13 +175,14 @@ const theme = createTheme({
 
     MuiGrid: {
       styleOverrides: {
-        container: {
-          flexWrap: "nowrap",
-          gap: "15px",
-        },
-        item: {
-          flex: "1",
-        },
+         container: {
+          padding:"30px",
+        //   flexWrap: "nowrap",
+        //   gap: "15px",
+         },
+        // item: {
+        //   flex: "1",
+        // },
       },
     },
 
@@ -262,7 +263,7 @@ const theme = createTheme({
           },
         },
         input: {
-          padding: "8px 32px 8px 15px !important",
+          // padding: "8px 32px 8px 15px !important",
         },
         inputMultiline: {
           padding: "0px !important",

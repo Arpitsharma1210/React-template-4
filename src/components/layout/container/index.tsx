@@ -1,7 +1,7 @@
 import React from "react";
 import Header, { Props as HeaderProps } from "../Header";
 import Sidebar from "../Sidebar";
-import Notifications from "../../Notifications";
+import Notifications from "../../notifications";
 import { styled } from "styled-components";
 import { colors } from "../../../theme/style.palette";
 import {
@@ -23,10 +23,16 @@ const Container: React.FC<Props> = ({
   hideSidebar,
   navigation,
   noPadding,
+  showGoBack,
   ...styleProps
 }) => (
   <StyledScreenContainer>
     {!hideSidebar && <Sidebar />}
+    
+                {!hideHeader && (<Header
+                    showGoBack={showGoBack}
+                />)}
+                
     <StyledScreenComponentContainer className="screen_comp">
       <StyledNotificationContainer>
         <Notifications />

@@ -1,52 +1,71 @@
 export { default as OnlyWith } from "./onlyWith";
 
 /* FORMS */
-export { default as AddCandidateForm } from "./Forms/Candidate";
-export { default as InterviewForm } from "./Forms/Interview";
-export { default as JobForm } from "./Forms/Job";
+export { default as AddCandidateForm } from "./form/candidate";
+export { default as InterviewForm } from "./form/interview";
+export { default as JobForm } from "./form/job";
+export * from './form';
 
 /* POPUPS */
-export { default as InfoPopup } from "./Popup/InfoPopup";
-export { default as DeletePopup } from "./Popup/DeletePopup";
-export { default as WarningPopup } from "./Popup/WarningPopup";
-export { default as FeedbackPopup } from "./Popup/FeedbackPopup";
-export { default as AssignPopup } from "./Popup/AssignPopup";
-export { default as ReschedulePopup } from "./Popup/ReschedulePopup";
-export { default as EditPipelinePopup } from "./Popup/EditPipeline";
+export { default as InfoPopup } from "./popup/InfoPopup";
+export { default as DeletePopup } from "./popup/DeletePopup";
+export { default as WarningPopup } from "./popup/WarningPopup";
+export { default as FeedbackPopup } from "./popup/FeedbackPopup";
+export { default as AssignPopup } from "./popup/AssignPopup";
+export { default as ReschedulePopup } from "./popup/ReschedulePopup";
+export { default as EditPipelinePopup } from "./popup/EditPipeline";
 
 /* INPUTFIELDS */
-export { default as Textfield } from "./InputFields/Text";
-export { default as Autocompletefield } from "./InputFields/Autocomplete";
-export { default as Selectfield } from "./InputFields/Select";
-export { default as Timefield } from "./InputFields/Time";
-export { default as Datefield } from "./InputFields/Date";
+export { default as Textfield } from "./inputFields/materialTextInput";
+export { default as Autocompletefield } from "./inputFields/materialAutocompleteInput";
+export { default as Selectfield } from "./inputFields/select";
+export { default as Timefield } from "./inputFields/time";
+export { default as Datefield } from "./inputFields/materialDateInput";
 
 /* HEADER */
 export { default as Header } from "./layout/Header";
 
 /* Card */
-export { default as Card } from "./Card";
-export { default as CardHeader } from "./Card/CardHeader";
-export { default as CardTitle } from "./Card/CardTitle";
-export { default as CardActions } from "./Card/CardActions";
-export { default as CardContent } from "./Card/CardContent";
+export { default as Card } from "./card";
+export { default as CardHeader } from "./card/CardHeader";
+export { default as CardTitle } from "./card/CardTitle";
+export { default as CardActions } from "./card/CardActions";
+export { default as CardContent } from "./card/CardContent";
 
-export { default as Button } from "./Button";
-export { default as ChipButton } from "./ChipButton";
-export { default as Dropdown } from "./Dropdown";
+export { default as Button } from "./button";
+export { default as ChipButton } from "./chipButton";
+export { default as Dropdown } from "./dropdown";
 export { default as InputLabel } from "./Label";
-export { default as Switch } from "./Switch";
-export { default as DataItem } from "./DataItem/";
-export { default as Table } from "./Table";
-export { default as Tooltip } from "./Tooltip";
-export { default as ModalWrapper } from "./ModalWrapper";
-export { default as Notifications } from "./Notifications";
+export { default as Switch } from "./switchInput";
+export { default as DataItem } from "./dataItem";
+export { default as Table } from "./table";
+export { default as Tooltip } from "./tooltip";
+export { default as ModalWrapper } from "./modal";
+export { default as Notifications } from "./notifications";
 export { default as Sidebar } from "./layout/Sidebar";
-export { default as ColumnMatrix } from "./ColumnMatrix";
-export { default as CustomAccordion } from "./Accordion";
-export { default as RichTextEditor } from "./RichTextEditor";
-export { default as Toast } from "./Toast";
-export { default as NameAvatar } from "./NameAvatar";
-export { default as Loader } from "./Loader";
+export { default as ColumnMatrix } from "./columnMatrix";
+export { default as CustomAccordion } from "./accordion";
+export { default as RichTextEditor } from "./richTextEditor";
+export { default as Toast } from "./toast";
+export { default as NameAvatar } from "./nameAvatar";
+export { default as Loader } from "./loader";
 
-export { default as JD } from "./JobDescription";
+export { default as JD } from "./jobDescription";
+
+
+export * from './layout';
+export {default as ListHeader} from './listHeader';
+export {default as MaterialTextInput} from './inputFields/materialTextInput';
+export {default as TextInput} from './textInput';
+export {default as PasswordTextInput} from './passwordTextInput';
+export {default as MaterialAutocompleteInput} from './inputFields/materialAutocompleteInput';
+export {default as PopupError} from './popupError';
+export {default as MuiCheckBox} from './checkbox';
+export {default as Modal} from './modal';
+export {default as ModalAction} from './modalAction';
+export {default as MaterialDateInput} from './inputFields/materialDateInput';
+export {default as Chip} from './chip/chip';
+export {default as ChipGroup} from './chip/chipGroup';
+export {default as Info} from './info';
+export {default as TruncatedText} from './truncatedText';
+export {default as Accordion} from './accordion';

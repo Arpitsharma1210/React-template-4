@@ -47,3 +47,13 @@ export const StyledButtonsContainer = styled.div`
   display: flex;
   gap: 18px;
 `;
+
+export const StyledGoBackContainer = styled.div`
+    border : 1px solid ${brand.textColour};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 7px;    
+
+`
