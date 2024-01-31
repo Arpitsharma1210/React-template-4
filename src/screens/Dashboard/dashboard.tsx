@@ -12,27 +12,21 @@ const Dashboard = () => {
 
   return (
     <>
-   <Container>
-   <div style={{ marginTop: "-35px" }} className="margin_adjust">
-        <Header />
-        
-      </div>
+      <Container>
+        <div style={{ marginTop: "-35px" }} className="margin_adjust">
+          <Header />
 
-      <div className="mb35" style={{ marginBottom: "35px" }}>
-        <Card>
-          <CardContent>
-            <></>
-          </CardContent>
-        </Card>
-      </div>
-      
-      {/* <Table
-        tableName= {messages?.heading?.blank}
-        data={[]}
-        columnData={[]}
-      /> */}
-   </Container>
-      
+        </div>
+
+        <div className="mb35" style={{ marginBottom: "35px" }}>
+          <Card>
+            <CardContent>
+              <></>
+            </CardContent>
+          </Card>
+        </div>
+      </Container>
+
     </>
   );
 };
