@@ -28,11 +28,11 @@ const Container: React.FC<Props> = ({
 }) => (
   <StyledScreenContainer>
     {!hideSidebar && <Sidebar />}
-    
-                {!hideHeader && (<Header
-                    showGoBack={showGoBack}
-                />)}
-                
+
+    {!hideHeader && (<Header
+      showGoBack={showGoBack}
+    />)}
+
     <StyledScreenComponentContainer className="screen_comp">
       <StyledNotificationContainer>
         <Notifications />
