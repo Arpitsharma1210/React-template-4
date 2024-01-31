@@ -146,7 +146,6 @@ const theme = createTheme({
           color: `${colors.black10}`,
           fontSize: "14px",
           lineHeight: "20px",
-          minWidth: "400px",
         },
       },
     },
@@ -160,7 +159,6 @@ const theme = createTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          minWidth: "400px",
           "&.Mui-focused": {
             "& .MuiOutlinedInput-notchedOutline": {
               borderColor: "rgba(0, 0, 0, 0.1) !important",
