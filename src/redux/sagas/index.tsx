@@ -1,61 +1,61 @@
-import { call, put, takeEvery } from "redux-saga/effects";
-import { SagaIterator } from "redux-saga";
+import { call, put, takeEvery } from 'redux-saga/effects';
+import { SagaIterator } from 'redux-saga';
 import {
-  APICALL,
   ApiCall,
-  FETCH_BASE_DATA,
-  LOGIN,
-  LOGOUT,
-  PAGINATED_APICALL,
   PagedApiCall,
   action,
+  createBasicActions,
   fetchBaseData,
   logout,
   removeToken,
   updateToken,
   fetchUserProfile,
-  FETCH_PROFILE,
-  updateProfile,
-  showLoader,
-  hideLoader,
-} from "../actions";
-import { HttpMethods, HttpStatus } from "../../utils";
-import { apiCall, login, ping, profile } from "../../api";
-import { MetaData } from "../../models";
+  APICALL,
+  PAGINATED_APICALL,
+  LOGIN,
+  LOGOUT,
+  FETCH_BASE_DATA,
+} from '../actions';
+import { HttpStatus } from '../../utils';
+import {
+  USER_PROFILE, apiCall, login, ping,
+} from '../../api';
+import { MetaData } from '../../models';
 import {
   Role,
   defaultAuthState,
   getStateFromToken,
   getToken,
-} from "../reducers/auth";
+} from '../reducers/auth';
+
 
 declare type callback = (body: any) => any;
 declare type errorHandler = (body: any, response: Response) => any;
+
+// const userProfileActions = createBasicActions<User>(USER_PROFILE_ACTION);
 
 export function* handleResponse(
   response: Response,
   callback: callback,
   error?: errorHandler,
-  ignoreStatus = false
+  ignoreStatus = false,
 ): any {
   try {
     if (response.status === HttpStatus.Ok) {
       const body = yield response.json();
-      // const authToken = response?.headers
-      //   ?.get("Authorization")
-      //   ?.split("Bearer ")[1];
-      // if (authToken) {
-      //   yield put(updateToken(authToken));
-      // }
+      const authToken = response?.headers
+        ?.get('Authorization')
+        ?.split('Bearer ')[1];
+      if (authToken) {
+        yield put(updateToken(authToken));
+      }
       const callbackResult = callback(body);
-
       if (callbackResult) {
         yield* callbackResult;
-        yield put(hideLoader());
       }
     } else if (
-      !ignoreStatus &&
-      response.status === HttpStatus.Unauthorized
+      !ignoreStatus
+      && response.status === HttpStatus.Unauthorized
       // || response.status === HttpStatus.Forbidden
     ) {
       /** @Note
@@ -63,10 +63,9 @@ export function* handleResponse(
        * but sometimes we want to ignore 403's,
        * especially when logging in
        * */
-      yield put(hideLoader());
+      yield put(logout());
     } else if (error) {
       const body = yield response.json();
-      yield put(hideLoader());
       const callbackResult = error(body, response);
       if (callbackResult) {
         yield* callbackResult;
@@ -82,7 +81,7 @@ export function* handleResponse(
   }
 }
 
-function toArray<T>(param: T | T[] | void) {
+export function toArray<T>(param: T | T[] | void) {
   if (param) {
     return param instanceof Array ? param.filter((p) => !!p) : [param];
   }
@@ -90,7 +89,7 @@ function toArray<T>(param: T | T[] | void) {
   return [];
 }
 
-function* doApiCall<
+export function* doApiCall<
   RequestProps,
   SuccessProps extends { _requestDate: Date },
   FailureProps extends Response
@@ -113,21 +112,19 @@ function* doApiCall<
   const date = new Date();
 
   try {
-    if (method === HttpMethods.GET) {
-      yield put(showLoader());
-    }
     const result: any = yield call(
       apiCall,
       endpoint,
       method,
       payload,
-      isFormData
+      isFormData,
     );
     yield* handleResponse(
       result,
-      function* (body: SuccessProps) {
+      function* handleSuccess(body: SuccessProps) {
         const newBody = body;
-        if (typeof body === "object") {
+        if (typeof body === 'object') {
+          // eslint-disable-next-line no-underscore-dangle
           newBody._requestDate = date;
         }
         if (success.resolve) {
@@ -135,12 +132,12 @@ function* doApiCall<
           yield* actions.map((act) => put(act));
         }
       },
-      function* (body: FailureProps): any {
+      function* handleFailure(body: FailureProps): any {
         if (failure.reject) {
           const actions = toArray(failure.reject(body));
           yield* actions.map((act) => put(act));
         }
-      }
+      },
     );
   } catch (e) {
     console.log(e); // eslint-disable-line no-console
@@ -148,10 +145,16 @@ function* doApiCall<
 }
 
 export function getPaginationParameters(filter: MetaData<any>): string {
-  const { order, direction, page, limit, filters } = filter;
+  const {
+    order,
+    //  direction,
+    page,
+    limit,
+    filters,
+  } = filter;
   const simpleParams = {
     order,
-    direction,
+    //  direction,
     page,
     limit,
   };
@@ -160,24 +163,20 @@ export function getPaginationParameters(filter: MetaData<any>): string {
 
   Object.keys(filters).forEach((key) => {
     filterParams = filterParams.concat(
-      filters[key] ? [`filter[${key}]=${filters[key]}`] : []
+      filters[key] ? [`filter[${key}]=${filters[key]}`] : [],
     );
   });
 
   return Object.keys(simpleParams)
-    .map((key: keyof typeof simpleParams) =>
-      simpleParams[key] ? `${key}=${String(simpleParams[key])}` : ""
-    )
+    .map((key: keyof typeof simpleParams) => (simpleParams[key] ? `${key}=${String(simpleParams[key])}` : ''))
     .concat(filterParams)
     .filter((value) => value)
-    .join("&");
+    .join('&');
 }
 
-function* doPaginatedApiCall<
-  MetaDataProps,
-  SuccessProps,
-  FailureProps extends Response
->(event: { payload: PagedApiCall<MetaDataProps> }): Generator<any> {
+export function* doPaginatedApiCall<MetaDataProps, SuccessProps>(event: {
+  payload: PagedApiCall<MetaDataProps>;
+}): Generator<any> {
   const {
     request: { endpoint, filter, loadMore: isLoadMore },
     update,
@@ -186,7 +185,7 @@ function* doPaginatedApiCall<
   const finalEndpoint = `${endpoint}?${getPaginationParameters(filter)}`;
   try {
     const result: any = yield call(apiCall, finalEndpoint);
-    yield* handleResponse(result, function* (body: SuccessProps) {
+    yield* handleResponse(result, function* handleSuccess(body: SuccessProps) {
       if (isLoadMore) {
         yield put(action(loadMore.action, body));
       } else {
@@ -198,34 +197,41 @@ function* doPaginatedApiCall<
   }
 }
 
-function* doFetchBaseData(): Generator<any> {
+export function* doFetchBaseData(): Generator<any> {
   if (getToken()) {
-    yield put(showLoader());
     const result: any = yield call(ping);
     yield* handleResponse(
       result,
-      function* () {
-        /** @Note Add actions to fetch initial data */
+      function* handleFetchUserProfile() {
         yield put(fetchUserProfile());
       },
-      function* () {},
-      true
+      function* handleLogout() {
+        yield put(logout());
+      },
+      true,
     );
   } else {
-    yield put(hideLoader());
+    yield put(logout());
   }
 }
 
-function* doLogin(event: any): Generator<any> {
+export function* doFetchUserProfile(): Generator<any> {
+  const result: any = yield call(apiCall, USER_PROFILE);
+  yield* handleResponse(result, function* handleUserProfileResponse(response) {
+    // yield put(userProfileActions.update(response || {}));
+  });
+}
+
+export function* doLogin(event: any): Generator<any> {
   try {
     const result: any = yield call(login, event?.payload?.formData);
     yield* handleResponse(
       result,
-      function* (body) {
+      function* handleSuccess(body) {
         const newState = getStateFromToken(defaultAuthState, body?.token);
         if (newState?.role === Role.INVALID) {
           yield event?.payload?.reject({
-            message: "error.login.invalidCredentials",
+            message: 'error.login.invalidCredentials',
           });
         } else {
           yield put(updateToken(body?.token));
@@ -233,39 +239,21 @@ function* doLogin(event: any): Generator<any> {
           yield event?.payload?.resolve(body);
         }
       },
-      function* (body: any) {
+      function* handleReject(body: any) {
         yield event?.payload?.reject(body);
       },
-      true
+      true,
     );
   } catch (e) {
     event?.payload?.reject(e);
   }
 }
 
-function* doLogout() {
+export function* doLogout() {
   try {
     yield put(removeToken());
   } catch (error) {
     console.log(error); // eslint-disable-line no-console
-  }
-}
-
-function* profileFetcher(): Generator<any> {
-  try {
-    const result: any = yield call(profile);
-    yield* handleResponse(
-      result,
-      function* (body) {
-        yield put(updateProfile(body?.user));
-      },
-      function* () {
-        throw new Error("Can't fetch Profile");
-      },
-      true
-    );
-  } catch (e) {
-    console.log(e);
   }
 }
 
@@ -275,5 +263,5 @@ export function* rootSaga(): SagaIterator<void> {
   yield takeEvery(LOGIN, doLogin);
   yield takeEvery(LOGOUT, doLogout);
   yield takeEvery(FETCH_BASE_DATA, doFetchBaseData);
-  yield takeEvery(FETCH_PROFILE, profileFetcher);
+ 
 }

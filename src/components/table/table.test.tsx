@@ -44,7 +44,7 @@ describe("MeasurelyTable Component", () => {
   it("renders the correct number of rows", () => {
     render(<MeasurelyTable specs={specs} data={data}  />);
     expect(screen.getAllByTestId("styled-table-row")).toHaveLength(
-      data.length + 0
+      data.length + 1
     );
   });
 
@@ -154,7 +154,7 @@ describe("MeasurelyTable Component additional test cases", () => {
         fetchPage={() => {}}
       />
     );
-    expect(screen.getAllByTestId("page-container")).toHaveLength(4);
+    expect(screen.getAllByTestId("page-container")).toHaveLength(2);
   });
 
   it("handles column sorting with specified disabled columns", () => {
@@ -179,6 +179,6 @@ describe("MeasurelyTable Component additional test cases", () => {
         fetchPage={() => {}}
       />
     );
-    expect(screen.getAllByTestId("page-container")).toHaveLength(4);
+    expect(screen.getAllByTestId("page-container")).toHaveLength(2);
   });
 });

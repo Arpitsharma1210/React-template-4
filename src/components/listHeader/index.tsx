@@ -69,12 +69,12 @@ const ListHeader: React.FC<Props> = ({
                 {filters
                 ?.filter((filter)=>filter?.renderAction ? filter?.renderAction() : true)
                 ?.map((filter) => (
-                    <StyledActionItem key={filter.id}>
+                    <StyledActionItem key={filter.id} data-testid={`Filter_${filter.id}`}>
                         {filter?.render()}
                     </StyledActionItem>
                 ))}
                 {resetFilters && <StyledActionItem>
-                    <Button
+                    <Button data-testid="ResetButton"
                         variant="text"
                         onClick={resetFilters}
                     >
@@ -82,9 +82,9 @@ const ListHeader: React.FC<Props> = ({
                     </Button>
                 </StyledActionItem>}
             </StyledActionItemContainer>
-            {ctaLabel && <StyledActionItemContainer justifyContent={'flex-end'}>
-                <StyledActionItem lastItem>
-                    <Button
+            {ctaLabel && <StyledActionItemContainer justifycontent='flex-end'>
+                <StyledActionItem lastitem>
+                    <Button data-testid="CtaButton"
                         variant="contained"
                         endIcon={<AddIcon />}
                         onClick={handleCtaClick}

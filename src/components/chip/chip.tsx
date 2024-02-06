@@ -17,11 +17,11 @@ const Chip:React.FC<Props> = ({
 })=>{
 
     return (
-        <StyledChipContainer bgColor={bgColor} textColor={textColor}>
+        <StyledChipContainer bgColor={bgColor} textColor={textColor} data-testid="chip-container">
             <StyledChipText chipSize={chipSize}>
                {text}
             </StyledChipText>
-            {iconCtaClick && <CloseRoundedIcon
+            {iconCtaClick && <CloseRoundedIcon data-testid="close-icon"
                 fontSize="small"
                 style={{ cursor: 'pointer' }}
                 onClick={iconCtaClick}

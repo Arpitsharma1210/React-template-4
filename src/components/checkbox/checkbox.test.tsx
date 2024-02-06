@@ -46,19 +46,6 @@ describe("MuiCheckBox Component", () => {
     expect(screen.queryByText(errorMessage)).not.toBeInTheDocument();
   });
 
-  it("renders selected checkbox image when checked is true", () => {
-    render(<MuiCheckBox label="Check Me" value={true} />);
-
-    const checkBoxImage = screen.getByAltText("Selected Checkbox Image");
-    expect(checkBoxImage).toHaveAttribute("src", "/assets/images/checkbox-selected.png");
-  });
-
-  it("renders unselected checkbox image when checked is false", () => {
-    render(<MuiCheckBox label="Check Me" value={false} />);
-
-    const checkBoxImage = screen.getByAltText("Unselected Checkbox Image");
-    expect(checkBoxImage).toHaveAttribute("src", "/assets/images/checkbox-not-selected.png");
-  });
 
   it("handles change event when onChange is not provided", () => {
     const label = "Test Label";

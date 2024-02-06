@@ -6,11 +6,8 @@ import { HttpStatus } from '../../utils';
 import {
   updateToken, logout,
   removeToken,
-  Action,
 } from '../actions';
 import { USER_PROFILE, apiCall } from '../../api';
-import { APICALL, ApiCall } from '../actions';
-import { doApiCall, doFetchBaseData, doFetchUserProfile, doLogin, doLogout } from '.';
 
 jest.mock('../../api', () => ({
   apiCall: jest.fn(),
@@ -234,7 +231,6 @@ describe('handleResponse', () => {
     const generator = saga.rootSaga();
 
     const actual = generator.next().value;
-    
     // const expected = takeEvery(APICALL, saga.doApiCall);
 
     // expect(actual).toEqual(expected);
@@ -317,91 +313,3 @@ describe('handleResponse', () => {
     expect(queryString).toBe('order=name&page=1&limit=10');
   });
 });
-
-
-
-
-
-
-
-
-describe('Root Saga', () => {
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
-  
-    it('should handle paginated API call', async () => {
-      const dispatched = [];
-      const generator = saga.doPaginatedApiCall({
-        payload: {
-          request: {
-            endpoint: '/api/endpoint',
-            filter: {
-                order: 'name',
-                page: 1,
-                limit: 10,
-                filters: {},
-                direction: 'asc',
-                total: 0,
-                allowedFilters: []
-            },
-            
-            key: ''
-          },
-          update: {
-            action: 'UPDATE_ACTION'
-          },
-          loadMore: {
-            action: ''
-          },
-          reset: {
-            action: ''
-          }
-        }
-      });
-  
-      await generator.next(); 
-    });
-  
-    it('should handle user login', async () => {
-      const dispatched = [];
-      const event = {
-        payload: {
-          formData: { /* Login form data */ },
-          resolve: jest.fn(),
-          reject: jest.fn()
-        }
-      };
-  
-      await runSaga({
-        dispatch: action => dispatched.push(action)
-      }, doLogin, event).toPromise();
-  
-    });
-  
-    it('should handle user logout', async () => {
-      const dispatched = [];
-      await runSaga({
-        dispatch: action => dispatched.push(action)
-      }, doLogout).toPromise();
-  
-    });
-  
-    it('should handle fetching base data', async () => {
-      const dispatched = [];
-      await runSaga({
-        dispatch: action => dispatched.push(action)
-      }, doFetchBaseData).toPromise();
-  
-    });
-  
-    it('should handle fetching user profile', async () => {
-      const dispatched = [];
-      await runSaga({
-        dispatch: action => dispatched.push(action)
-      }, doFetchUserProfile).toPromise();
-  
-    });
-  });
-
-

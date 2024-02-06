@@ -5,7 +5,7 @@ import {
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import { apiCall } from '../redux/actions';
-import useEntity from './entity';
+import { useEntity } from './entity';
 import store from '../redux/store';
 const TestComponent = () => {
   const { entity } = useEntity('/api/account');

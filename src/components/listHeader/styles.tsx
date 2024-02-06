@@ -13,11 +13,11 @@ export const StyledContainer = styled.div`
     gap: 24px;
 `
 
-export const StyledActionItemContainer = styled.div<{justifyContent?:string}>`
+export const StyledActionItemContainer = styled.div<{justifycontent?:string}>`
     // display: flex;
     flex: 1;
     align-items: center;
-    justify-content: ${({justifyContent})=>justifyContent || 'flex-start'};
+    justify-content: ${({justifycontent})=>justifycontent || 'flex-start'};
     gap: 16px;
     ${respondTo.smOnly}{
         flex-direction: column;
@@ -25,9 +25,9 @@ export const StyledActionItemContainer = styled.div<{justifyContent?:string}>`
     }
 `
 
-export const StyledActionItem = styled.div<{lastItem?:boolean}>`
+export const StyledActionItem = styled.div<{lastitem?:boolean}>`
 
-    ${({lastItem})=>lastItem&&css`
+    ${({lastitem})=>lastitem&&css`
        
     `}
     ${respondTo.smOnly}{

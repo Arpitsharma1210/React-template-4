@@ -26,7 +26,7 @@ const ColumnMatrix: React.FC<Props> = ({ data, rows = 3 }) => {
         return (
           <Column key={i}>
             {objectKeys.slice(indexFrom, indexFrom + rows).map((item, j) => (
-              <IndividualField key={j}>
+              <IndividualField key={j} data-testid="individual-field">
                 <FieldName>{item}</FieldName>
                 <FieldValue>{data[item]}</FieldValue>
               </IndividualField>

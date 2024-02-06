@@ -19,11 +19,11 @@ const Card: React.FC<Props> = ({ header, children,
   cardCss, contentCss, headerCss,
   noHeader, title, noHeaderPadding }) => {
   return (
-    <StyledCard sx={cardCss}>
-            {!noHeader && <StyledCardHeader style={headerCss} noHeaderPadding={noHeaderPadding}>
+    <StyledCard sx={cardCss} data-testid="card">
+            {!noHeader && <StyledCardHeader style={headerCss} noHeaderPadding={noHeaderPadding} data-testid="styled-card-header">
                 {header}
                 {title && (
-                    <Grid 
+                    <Grid data-testid="grid-container"
                         container
                         alignItems={'center'}
                         justifyContent={'space-between'}

@@ -58,7 +58,7 @@ const Modal: React.FC<Props> = ({
         open={!!show}
         onClose={onClose}
     >
-        <StyledContainer fitContent={fitContent}>
+        <StyledContainer fitContent={fitContent} data-testid="modal-container">
             <Card
                 contentCss={{
                     overflowY: 'auto',

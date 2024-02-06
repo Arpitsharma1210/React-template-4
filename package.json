@@ -31,7 +31,7 @@
     "build:prod": "webpack --config webpack/webpack.config.js --env env=prod",
     "build:stage": "webpack --config webpack/webpack.config.js --env env=stage",
     "build:dev": "webpack --config webpack/webpack.config.js --env env=dev",
-    "test":"jest --watch"
+    "test":"jest --config jest.config.js"
   },
   "jest": {
     "setupFilesAfterEnv": [
