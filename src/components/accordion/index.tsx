@@ -19,9 +19,9 @@ const Accordion: React.FC<CustomAccordionProps> = ({
   const [expanded, setExpanded] = useState<boolean>(false);
   return (
     <MuiAccordion>
-      <AccordionSummary onClick={() => setExpanded(!expanded)}>
+      <AccordionSummary onClick={() => setExpanded(!expanded)} data-testid="accordion-summary">
         <StyledTypography expanded={expanded}>{title}</StyledTypography>
-        {expanded ? <CloseIcon /> : <AddIcon />}
+        {expanded ? <CloseIcon data-testid="close-icon"/> : <AddIcon />}
       </AccordionSummary>
       <AccordionDetails>{contentComponent}</AccordionDetails>
       </MuiAccordion>

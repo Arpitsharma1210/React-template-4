@@ -37,17 +37,19 @@ const TextInput: React.FC<Props> = ({
                     {label}
                 </StyledLabel>
             )}
-            <StyledInputContainer>
+            <StyledInputContainer data-testid="inputContainer">
                 {readOnly ? (
                     <StyledInputText 
                         onClick={onReadOnlyCtaClick}
                         disabled={disabled} 
                         variant='body2'
+                        data-testid="readOnlyInputField"
                     >
                         {value || ''}
                     </StyledInputText>
                 ) : (
                     <StyledInput
+                    data-testid="inputField"
                         {...props}
                         disabled={disabled}
                         error={disableErrorMode ? false : !!error}

@@ -51,6 +51,9 @@
         "serverError": "Server Error. Please contact your admin, or try again later.",
         "usersFetchFail": "Can't get users",
         "userProfileFail": "Can't fetch user profile",
+        "invalidDate": "Invalid date",
+        "dateMustBeInTheFuture": "Date must be in the future",
+        "dateMustBeInThePast": "Date must be in the past",
         "password": {
           "notMatching": "Passwords do not match",
           "notCapital": "Password must contain at least one uppercase letter.",

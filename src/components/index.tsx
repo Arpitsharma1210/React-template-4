@@ -3,15 +3,6 @@ export { default as OnlyWith } from "./onlyWith";
 /* FORMS */
 export * from './form';
 
-/* POPUPS */
-export { default as InfoPopup } from "./popup/InfoPopup";
-export { default as DeletePopup } from "./popup/DeletePopup";
-export { default as WarningPopup } from "./popup/WarningPopup";
-export { default as FeedbackPopup } from "./popup/FeedbackPopup";
-export { default as AssignPopup } from "./popup/AssignPopup";
-export { default as ReschedulePopup } from "./popup/ReschedulePopup";
-export { default as EditPipelinePopup } from "./popup/EditPipeline";
-
 /* INPUTFIELDS */
 export { default as Textfield } from "./inputFields/materialTextInput";
 export { default as Autocompletefield } from "./inputFields/materialAutocompleteInput";
@@ -41,7 +32,6 @@ export { default as Notifications } from "./notifications";
 export { default as Sidebar } from "./layout/Sidebar";
 export { default as ColumnMatrix } from "./columnMatrix";
 export { default as CustomAccordion } from "./accordion";
-export { default as RichTextEditor } from "./richTextEditor";
 export { default as Toast } from "./toast";
 export { default as NameAvatar } from "./nameAvatar";
 export { default as Loader } from "./loader";

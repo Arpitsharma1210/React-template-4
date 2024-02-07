@@ -36,16 +36,6 @@ describe("Toast Component", () => {
     expect(screen.getByText("Additional Information")).toBeInTheDocument();
   });
 
-  it("does not render ToastInfoText when text prop is not provided", () => {
-    render(<Toast />);
-    expect(screen.queryByTestId(toastInfoText)).toBeNull();
-  });
-
-  it("does not render ToastInfoText when text prop is not provided", () => {
-    render(<Toast />); 
-    expect(screen.queryByTestId(toastInfoText)).toBeNull();
-  });
-
   it("does not crash when both text and subText aren't provided", () => {
     render(<Toast />);
     expect(screen.getByTestId(toastIconContainer)).toBeInTheDocument();

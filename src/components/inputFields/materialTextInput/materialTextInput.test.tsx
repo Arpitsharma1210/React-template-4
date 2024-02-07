@@ -33,20 +33,11 @@ describe('MaterialTextInput', () => {
     
         const eyeIcon = getByTestId('eye-icon');
     
-        // Initial state should be false
         expect(eyeIcon).toBeInTheDocument();
         expect(eyeIcon).toHaveClass('MuiSvgIcon-root');
-        
-        // Simulate click on eye icon
         fireEvent.click(eyeIcon);
-    
-        // State should be true after the click
         expect(eyeIcon).toHaveClass('MuiSvgIcon-root');
-    
-        // Simulate click on eye icon again
         fireEvent.click(eyeIcon);
-    
-        // State should be false after the second click
         expect(eyeIcon).toHaveClass('MuiSvgIcon-root');
       });
 });

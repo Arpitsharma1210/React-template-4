@@ -20,13 +20,13 @@ const Toast: React.FC<Props> = ({
   const toastIcon = type === "success" ? SuccessIcon : FailIcon;
 
   return (
-    <StyledToastContainer>
+    <StyledToastContainer data-testid="toastContainer">
       <figure>
-        <img src={toastIcon} alt="toast icon" />
+        <img src={toastIcon} alt="toast icon" data-testid="toastIconContainer"/>
       </figure>
       <div className="toast-text">
-        <p className="toast-text-maintext">{text}</p>
-        <p className="toast-text-subtext">{subText}</p>
+        <p className="toast-text-maintext" data-testid="toastInfoText">{text}</p>
+        <p className="toast-text-subtext" data-testid="toastInfoSubText">{subText}</p>
       </div>
       <div className="closeBtn" role="button" tabIndex={0} onClick={closeToast}>
         <img src={CloseIcon} alt="close icon" />

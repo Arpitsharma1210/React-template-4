@@ -8,7 +8,7 @@ const Loader = () => {
   const loaderState = useSelector((state: ReduxState) => state.loader);
   return (
     loaderState.visibility && (
-      <StyledLoaderContainer>
+      <StyledLoaderContainer data-testid="loader-container">
         <picture>
           <img src={NoahLogo} alt="noah logo loader" />
         </picture>

@@ -34,6 +34,7 @@ const PopupError:React.FC<Props> = ({
                 horizontal: 'center',
             }}
             classes={{ paper: classes.paper }}
+            data-testid="popupError"
         >
             <StyledContainer>
                 <StyledInfoContainer>
