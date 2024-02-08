@@ -7,7 +7,7 @@ const ctaContainer = "ctaContainer";
 
 describe("Truncated text component", () => {
   it("renders without crashing", () => {
-    render(<TruncatedText />);
+    render(<TruncatedText text=""/>);
   });
 
   it("disables loadMore when hideLoadMore is true", () => {
