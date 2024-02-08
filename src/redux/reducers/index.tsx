@@ -24,5 +24,6 @@ const createRootReducer = (history: History): Reducer =>
     /* End Third party reducers */
     auth,
       // Add more Reducers here
+      loader: (state = null) => state,
   });
 export default createRootReducer;
