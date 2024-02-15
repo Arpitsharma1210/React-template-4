@@ -73,7 +73,7 @@ const InterviewForm: React.FC<Props> = ({
   }
 
   return (
-    <ModalWrapper modalOpenState={formOpen} modalStateHandler={formShowHandler}>
+    <ModalWrapper modalStateHandler={formShowHandler}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <StyledCandidateHeader>{header}</StyledCandidateHeader>
         <Stack rowGap={"20px"} mb="38px">
