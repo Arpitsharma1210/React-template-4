@@ -66,14 +66,14 @@ const Sidebar = () => {
 
   return (
     <StyledSidebar className="sidebar">
-      <StyledLogoContainer className="sidebar_logo" data-testid="sidebar-logo">
+      <StyledLogoContainer className="sidebar_logo">
         <StyledImg
           src={"../../assets/images/smallLogo.png"}
           alt="sidebar logo"
         />
       </StyledLogoContainer>
-      <StyledLineBreak className="sidebar_logo_linebreak" data-testid="sidebar-logo-linebreak"></StyledLineBreak>
-      <AllMenuItems className="allMenu_items" data-testid="allMenu-items">
+      <StyledLineBreak className="sidebar_logo_linebreak"></StyledLineBreak>
+      <AllMenuItems className="allMenu_items" >
         <StyledMenuItemContainer className="menubar">
           {menuItems.map((menuItem, index) => (
             <StyledMenuOption key={index} className="menuItem_wrapper">

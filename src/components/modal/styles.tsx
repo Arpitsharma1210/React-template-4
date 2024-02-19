@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 
 const CommonModalStyles = () => css`
   min-height: 300px;
-  min-width: 300px;
+  max-width: 50%;
   padding: 30px;
   background-color: ${colors.white};
   outline: none;
@@ -38,12 +38,12 @@ export const StyledModalContentBox = styled.div<{
 export const StyledSliderModalContentBox = styled.div<{
   $edgy?: boolean;
 }>`
-  position: absolute;
+ position: absolute;
   top: 0;
   left: auto;
   right: 0;
   transform: translateX(100%);
-  transition: transform 500ms ease;
+  transition: transform 800ms ease;
   ${CommonModalStyles()}
   ${({ $edgy }) => isEdgy($edgy)}
 `;
@@ -51,7 +51,7 @@ export const StyledSliderModalContentBox = styled.div<{
 export const closeIconContainerStyles = {
   display: "flex",
   justifyContent: "flex-end",
-  marginBottom: "11px",
+  // marginBottom: "11px",
 };
 
 export const StyledCloseIcon = styled.img`

@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Component matches snapshot when given props 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiTableContainer-root sc-hKFymg feMSlC css-rorn0c-MuiTableContainer-root"
+  >
+    <table
+      class="MuiTable-root sc-eCAqax gAOAFj css-rqglhn-MuiTable-root"
+    >
+      <thead
+        class="MuiTableHead-root sc-jSFipO css-15wwp11-MuiTableHead-root"
+      >
+        <tr
+          class="MuiTableRow-root MuiTableRow-head sc-iCoHzw css-1q1u3t4-MuiTableRow-root"
+        >
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium sc-gKAaef eTcKZP css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <div
+              class="sc-iqAbyq fGFoQE"
+            >
+              Name
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                style="color: rgb(242, 242, 243);"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </div>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium sc-gKAaef eTcKZP css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <div
+              class="sc-iqAbyq fGFoQE"
+            >
+              Age
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="MuiTableBody-root sc-kEqXeH gFbkHC css-apqrd9-MuiTableBody-root"
+      >
+        <tr
+          class="MuiTableRow-root sc-iCoHzw css-1q1u3t4-MuiTableRow-root"
+        >
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium sc-gKAaef eTcKZP css-1ex1afd-MuiTableCell-root"
+          >
+            John Doe
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium sc-gKAaef eTcKZP css-1ex1afd-MuiTableCell-root"
+          >
+            25
+          </td>
+        </tr>
+        <tr
+          class="MuiTableRow-root sc-iCoHzw css-1q1u3t4-MuiTableRow-root"
+        >
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium sc-gKAaef eTcKZP css-1ex1afd-MuiTableCell-root"
+          >
+            Jane Doe
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium sc-gKAaef eTcKZP css-1ex1afd-MuiTableCell-root"
+          >
+            30
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="sc-fFSPgy fYHavD"
+    >
+      <div
+        class="sc-bkbjWr lfRZBA"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body2 sc-iemXqs dvFzQR css-e784if-MuiTypography-root"
+        >
+          Showing
+        </p>
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-dIvsgl iGtODg css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+        >
+          <div
+            aria-controls=":r0:"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            role="combobox"
+            tabindex="0"
+          >
+            10
+          </div>
+          <input
+            aria-hidden="true"
+            aria-invalid="false"
+            class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            tabindex="-1"
+            value="10"
+          />
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ExpandMoreRoundedIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.88 9.29 12 13.17 8.12 9.29a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-ihdtdm"
+            >
+              <span
+                class="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+      <div
+        class="sc-hHEhDq XLjAc"
+      >
+        <div
+          class="sc-dlMCtj ecultB"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ChevronLeftRoundedIcon"
+            focusable="false"
+            style="color: rgb(120, 120, 128);"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M14.71 6.71a.9959.9959 0 0 0-1.41 0L8.71 11.3c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L10.83 12l3.88-3.88c.39-.39.38-1.03 0-1.41z"
+            />
+          </svg>
+        </div>
+        <div
+          class="sc-dlMCtj hmXqAX"
+        >
+          1
+        </div>
+        <div
+          class="sc-dlMCtj ecultB"
+        >
+          2
+        </div>
+        <div
+          class="sc-dlMCtj ecultB"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ChevronRightRoundedIcon"
+            focusable="false"
+            style="color: rgb(120, 120, 128);"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

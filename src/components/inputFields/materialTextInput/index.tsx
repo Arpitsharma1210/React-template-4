@@ -68,7 +68,7 @@ const MaterialTextInput: React.FC<Props> = ({
                 endAdornment: (
                   <InputAdornment position="end" onClick={passwordHandler}>
                     <IconButton aria-label="toggle password visibility">
-                      {showPassword ? <VisibileIcon data-testid="eye-icon"/> : <InvisibileIcon data-testid="eye-icon" />}
+                      {showPassword ? <VisibileIcon/> : <InvisibileIcon/>}
                     </IconButton>
                   </InputAdornment>
                 ),

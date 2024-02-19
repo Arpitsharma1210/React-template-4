@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataItem Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnyFh dLJTfV"
+  >
+    <div
+      class="imgContainer"
+    >
+      <img
+        alt="dataitem icon"
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      class="databox"
+    >
+      <div
+        class="title"
+      >
+        Active Jobs
+      </div>
+      <div
+        class="data"
+      >
+        100
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

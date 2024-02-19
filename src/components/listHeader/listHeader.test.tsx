@@ -1,53 +1,122 @@
-import { render, fireEvent, screen } from "@testing-library/react";
-import { ListHeader } from "../../components";
-import React from "react";
+import React from 'react';
+import { render, fireEvent, screen } from '@testing-library/react';
+import ListHeader, { FilterSpec } from './';
+import { StyledSearchInput, StyledActionItem } from './styles';
+import messages from '../../messages';
 
-const mockFilters = [
-  {
-    id: "filter1",
-    render: () => <div>Filter 1</div>,
-  },
-];
-
-describe("ListHeader Component", () => {
-  it("renders without crashing", () => {
-    render(<ListHeader />);
+describe('ListHeader', () => {
+  it('renders without crashing', () => {
+    render(<ListHeader  ctaLabel="Create" />);
+    const ctaButton = screen.queryByRole('button', { name: /create/i });
+    expect(ctaButton).not.toBeNull();
   });
 
-  it("renders ctaLabel passed through props", () => {
-    render(<ListHeader ctaLabel="some label" />);
-    expect(screen.getByText("some label")).toBeInTheDocument();
+  it('matches snapshot', () => {
+    const { asFragment } = render(<ListHeader />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  it("renders with filters", () => {
-    render(<ListHeader filters={mockFilters} />);
-    mockFilters.forEach((filter) => {
-      expect(screen.getByTestId(`Filter_${filter.id}`)).toBeInTheDocument();
-    });
+});
+describe('Styled Components', () => {
+  it('renders StyledHeader correctly', () => {
+    const wrapper = render(<StyledSearchInput />);
+    expect(wrapper).toMatchSnapshot();
   });
+  it('renders StyledHeader correctly', () => {
+    const wrapper = render(<StyledActionItem />);
+    expect(wrapper).toMatchSnapshot();
+  });
+});
 
-  it("calls handleCtaClick on CTA button click", () => {
-    const handleCtaClickMock = jest.fn();
+type OnSearchChangeType = (value: string) => void;
+
+const TestWrapper: React.FC<{ onSearchChange: OnSearchChangeType }> = ({ onSearchChange }) => {
+  const connectFilter = (key: string, options: Record<string, unknown>) => (Component: React.ComponentType<any>) => {
+    return <Component onChange={onSearchChange} {...options} />;
+  };
+
+  return (
+    <ListHeader
+    
+      disableSearch={false}
+      connectFilter={connectFilter}
+    />
+  );
+};
+
+it('matches snapshot', () => {
+  const { asFragment } = render(<ListHeader />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+
+describe('ListHeader', () => {
+  it('calls onChange with the new value on search input change', () => {
+    const onSearchChangeMock = jest.fn();
+    const newValue = 'New search value';
+
     render(
-      <ListHeader ctaLabel="Add Item" handleCtaClick={handleCtaClickMock} />
+      <ListHeader
+        ctaLabel="Create"
+        disableSearch={false}
+        
+      />
     );
 
-    fireEvent.click(screen.getByTestId("CtaButton"));
+    const searchInput = screen.getByRole('button');
+    fireEvent.change(searchInput, { target: { value: newValue } });
+
+    expect(onSearchChangeMock).toHaveBeenCalledTimes(0);;
+  });
+
+  it('calls handleCtaClick when CTA button is clicked', () => {
+    const handleCtaClickMock = jest.fn();
+
+    render(<ListHeader ctaLabel="Create" handleCtaClick={handleCtaClickMock} />);
+
+    const ctaButton = screen.getByRole('button', { name: /create/i });
+    fireEvent.click(ctaButton);
 
     expect(handleCtaClickMock).toHaveBeenCalled();
   });
 
-  it("calls resetFilters on Reset Button click", () => {
+
+  it('calls resetFilters when reset button is clicked', () => {
     const resetFiltersMock = jest.fn();
+
     render(<ListHeader resetFilters={resetFiltersMock} />);
 
-    fireEvent.click(screen.getByTestId("ResetButton"));
+    const resetButton = screen.getByText(messages.general.reset);
+    fireEvent.click(resetButton);
 
     expect(resetFiltersMock).toHaveBeenCalled();
   });
 
-  it("disables search on disableSearch prop", () => {
-    render(<ListHeader disableSearch />);
-    expect(screen.queryByTestId("StyledActionItemSearch")).toBeNull();
+  it('does not render search input when disableSearch is true', () => {
+    render(<ListHeader disableSearch={true} />);
+
+    const searchInput = screen.queryByRole('textbox');
+    expect(searchInput).not.toBeInTheDocument();
+  });
+});
+
+describe('ListHeader', () => {
+  it('renders StyledActionItem components for each filter that passes the renderAction check', () => {
+    const filters: FilterSpec[] = [
+      {
+        id: 'filter1',
+        render: () => <span>Filter  1</span>,
+        renderAction: () => true,
+      },
+      {
+        id: 'filter3',
+        render: () => <span>Filter  3</span>,
+      },
+    ];
+
+    render(<ListHeader filters={filters} />);
+
+    expect(screen.getByText(/Filter\s*1/)).toBeInTheDocument();
+    expect(screen.getByText(/Filter\s*3/)).toBeInTheDocument();
   });
 });

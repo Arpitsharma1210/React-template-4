@@ -21,9 +21,9 @@ test('renders with correct LTR layout', () => {
       </Router>
     </Provider>
   );
-  expect(screen.getByTestId('sidebar-logo')).toBeInTheDocument();
-  expect(screen.getByTestId('sidebar-logo-linebreak')).toBeInTheDocument();
-  expect(screen.getByTestId('allMenu-items')).toBeInTheDocument();
+  expect(screen.getByAltText('sidebar logo')).toBeInTheDocument();
+  expect(screen.getByText('Dashboard')).toBeInTheDocument();
+  expect(screen.getByText('Dashboard').closest('a')).toBeInTheDocument();
 });
 
 test('renders with correct RTL layout', () => {
@@ -36,7 +36,7 @@ test('renders with correct RTL layout', () => {
     </Provider>
   );
 
-  expect(screen.getByTestId('sidebar-logo')).toBeInTheDocument();
-  expect(screen.getByTestId('sidebar-logo-linebreak')).toBeInTheDocument();
-  expect(screen.getByTestId('allMenu-items')).toBeInTheDocument();
+  expect(screen.getByAltText('sidebar logo')).toBeInTheDocument();
+  expect(screen.getByText('Dashboard')).toBeInTheDocument();
+  expect(screen.getByText('Dashboard').closest('a')).toBeInTheDocument();
 });

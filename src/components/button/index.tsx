@@ -32,7 +32,6 @@ const MuiButton: React.FC<Props> = ({
       type={type || "button"}
       disabled={disabled}
       {...props}
-      data-testid="custom-button"
     >
       <StyledButtonTextWrapper
         className={`bold_btnText_${bold}`}

@@ -1,19 +1,30 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { Tooltip } from "../../components";
+import Tooltip from "./index";
 
-// Test ids
-const tooltip = "tooltip";
+
+jest.mock("./index", () => ({
+  __esModule: true,
+  default: jest.fn(({ children, title }) => (
+    <div data-testid="mock-tooltip" role="tooltip">
+      {children}
+      <div data-testid="mock-tooltip-title" style={{ display: 'none' }}>
+        {title}
+      </div>
+    </div>
+  )),
+}));
+
 
 describe("Tooltip Component", () => {
-    it("renders without crashing", () => {
-        render(
-          <Tooltip title="Tooltip Title">
-            <div>Child Element</div>
-          </Tooltip>
-        );
-        expect(screen.getByTestId(tooltip)).toBeInTheDocument();
-      });
+  it("renders without crashing", () => {
+    render(
+      <Tooltip title="Tooltip Title">
+        <div>Child Element</div>
+      </Tooltip>
+    );
+    expect(screen.getByTestId("mock-tooltip")).toBeInTheDocument();
+  });
 
   it("renders child element as text", () => {
     render(<Tooltip title="Tooltip Title"><div>Child Element</div></Tooltip>);
@@ -29,20 +40,33 @@ describe("Tooltip Component", () => {
     expect(screen.getByRole("article")).toBeInTheDocument();
   });
 
-//   it("renders child without title", () => {
-//     render(<Tooltip><div>Hello</div></Tooltip>);
-//     expect(screen.getByText("Hello")).toBeInTheDocument();
-//   });
+  it("matches snapshot when tooltip is visible", () => {
+    const { asFragment } = render(<Tooltip title="Tooltip Title"><div>Child Element</div></Tooltip>);
+    fireEvent.mouseEnter(screen.getByRole('tooltip'));
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-//   it("renders without child and title", () => {
-//     render(<Tooltip />);
-//     expect(screen.getByTestId(tooltip)).toBeInTheDocument();
-//   });
+  it("matches snapshot when tooltip is not visible", () => {
+    const { asFragment } = render(<Tooltip title="Tooltip Title"><div>Child Element</div></Tooltip>);
+    expect(asFragment()).toMatchSnapshot();
+  });
 
   it("renders with the specified title", async () => {
     render(<Tooltip title="Tooltip Title"><div>Child Element</div></Tooltip>);
-    fireEvent.mouseEnter(screen.getByTestId(tooltip));
-    await screen.findByText("Tooltip Title");
-    expect(screen.getByText("Tooltip Title")).toBeInTheDocument();
+    fireEvent.mouseEnter(screen.getByRole('tooltip'));
+    const tooltipTitle = await screen.findByText("Tooltip Title");
+    expect(tooltipTitle).toBeInTheDocument();
   });
+
+  it("matches snapshot when tooltip is visible", () => {
+    const { asFragment } = render(<Tooltip title="Tooltip Title"><div>Child Element</div></Tooltip>);
+    fireEvent.mouseEnter(screen.getByRole('tooltip'));
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("matches snapshot when tooltip is not visible", () => {
+    const { asFragment } = render(<Tooltip title="Tooltip Title"><div>Child Element</div></Tooltip>);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
 });

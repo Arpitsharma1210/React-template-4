@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColumnMatrix Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnyFh hGOQnk"
+  >
+    <div
+      class="sc-gtsqUy hZKseF"
+    >
+      <div
+        class="sc-dlniIP gMGdig"
+      >
+        <div
+          class="sc-hKFymg vPnoS"
+        >
+          Name
+        </div>
+        <div
+          class="sc-eCAqax ghLdAc"
+        >
+          John Doe
+        </div>
+      </div>
+      <div
+        class="sc-dlniIP gMGdig"
+      >
+        <div
+          class="sc-hKFymg vPnoS"
+        >
+          Age
+        </div>
+        <div
+          class="sc-eCAqax ghLdAc"
+        >
+          30
+        </div>
+      </div>
+      <div
+        class="sc-dlniIP gMGdig"
+      >
+        <div
+          class="sc-hKFymg vPnoS"
+        >
+          Gender
+        </div>
+        <div
+          class="sc-eCAqax ghLdAc"
+        >
+          Male
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-gtsqUy hZKseF"
+    >
+      <div
+        class="sc-dlniIP gMGdig"
+      >
+        <div
+          class="sc-hKFymg vPnoS"
+        >
+          City
+        </div>
+        <div
+          class="sc-eCAqax ghLdAc"
+        >
+          New York
+        </div>
+      </div>
+      <div
+        class="sc-dlniIP gMGdig"
+      >
+        <div
+          class="sc-hKFymg vPnoS"
+        >
+          Country
+        </div>
+        <div
+          class="sc-eCAqax ghLdAc"
+        >
+          USA
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

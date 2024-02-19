@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Loader from "./index";
 import { useSelector } from "react-redux";
 
@@ -18,7 +18,7 @@ describe("Loader component", () => {
 
     render(<Loader />);
 
-    expect(screen.getByTestId("loader-container")).toBeInTheDocument();
+    expect(screen.getByAltText("noah logo loader")).toBeInTheDocument();
   });
 
   it("does not render loader when visibility is false", () => {
@@ -26,6 +26,20 @@ describe("Loader component", () => {
 
     render(<Loader />);
 
-    expect(screen.queryByTestId("loader-container")).not.toBeInTheDocument();
+    expect(screen.queryByAltText("noah logo loader")).not.toBeInTheDocument();
+  });
+
+  it("matches snapshot when loader is visible", () => {
+    (useSelector as jest.Mock).mockReturnValue({ visibility: true });
+
+    const { asFragment } = render(<Loader />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("matches snapshot when loader is not visible", () => {
+    (useSelector as jest.Mock).mockReturnValue({ visibility: false });
+
+    const { asFragment } = render(<Loader />);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

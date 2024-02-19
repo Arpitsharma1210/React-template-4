@@ -6,7 +6,7 @@ describe('ColumnMatrix Component', () => {
   it('renders column matrix with provided data', () => {
     const data = {
       Name: 'John Doe',
-      Age: 30,
+      Age:  30,
       Gender: 'Male',
       City: 'New York',
       Country: 'USA',
@@ -33,7 +33,19 @@ describe('ColumnMatrix Component', () => {
       Field5: 'Value5',
     };
     render(<ColumnMatrix data={data} rows={2} />);
-    expect(screen.getAllByTestId('individual-field')).toHaveLength(5);
+    const fields = screen.getAllByText(/Value[1-5]/);
+    expect(fields).toHaveLength(5);
   });
 
+  it('matches snapshot', () => {
+    const data = {
+      Name: 'John Doe',
+      Age:  30,
+      Gender: 'Male',
+      City: 'New York',
+      Country: 'USA',
+    };
+    const { asFragment } = render(<ColumnMatrix data={data} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

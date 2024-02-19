@@ -10,7 +10,7 @@ import {
 import { colors } from "../../theme/style.palette";
 
 const Tooltip = styled(({ className, ...props }: TooltipProps) => (
-  <MaterialTooltip {...props} arrow classes={{ popper: className }} data-testid="tooltip" />
+  <MaterialTooltip {...props} arrow classes={{ popper: className }}/>
 ))({
   [`& .${tooltipClasses.arrow}`]: {
     color: colors.grey60,

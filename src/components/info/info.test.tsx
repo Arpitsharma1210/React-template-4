@@ -16,11 +16,4 @@ describe('Info component', () => {
     expect(screen.getByTestId('custom-content')).toBeInTheDocument();
   });
 
-//   it('renders both text and custom content correctly', () => {
-//     const customContent = () => <div data-testid="custom-content">Custom Content</div>;
-//     render(<Info text="This is a test info" renderContent={customContent} />);
-
-//     expect(screen.getByText('This is a test info')).toBeInTheDocument();
-//     expect(screen.getByTestId('custom-content')).toBeInTheDocument();
-//   });
 });

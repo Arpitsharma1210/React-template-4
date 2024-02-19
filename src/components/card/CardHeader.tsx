@@ -8,7 +8,7 @@ const CardHeader: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <Card_Header className="card_header" data-testid="card-header">
+    <Card_Header className="card_header">
       {children}
     </Card_Header>
   );

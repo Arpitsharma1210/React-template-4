@@ -154,7 +154,6 @@ const Table: React.FC<TableProps> = ({
             isHeading
             clickable={canSort}
             onClick={() => clickTitle(spec)}
-            data-testid="styled-table-cell"
           >
             <StyledCellContainer>
               {spec.label || ""}
@@ -180,7 +179,7 @@ const Table: React.FC<TableProps> = ({
       .concat(
         hasActions()
           ? [
-              <StyledTableCell isHeading centerAlign data-testid="styled-table-cell">
+              <StyledTableCell isHeading centerAlign>
                 {actionLabel || messages.general.action}
               </StyledTableCell>,
             ]
@@ -201,20 +200,20 @@ const Table: React.FC<TableProps> = ({
     Object.freeze(immutableData);
 
     return immutableData.map((row: Record<string, any>) => (
-      <StyledTableRow key={getRowId(row)} data-testid="styled-table-row">
+      <StyledTableRow key={getRowId(row)}>
         {specs
           .filter((spec) => shouldRenderColumn(spec.id))
           .map((field) => {
             const formatter = (param: any) =>
               field.format ? field.format(param) : formatStr(param);
             return (
-              <StyledTableCell key={`${field.label}@${field.id}`} data-testid="styled-table-cell">
+              <StyledTableCell key={`${field.label}@${field.id}`}>
                 {formatter(row[field.id])}
               </StyledTableCell>
             );
           })}
         {hasActions() && (
-          <StyledTableCell key={"actionButtons"} centerAlign data-testid="styled-table-cell">
+          <StyledTableCell key={"actionButtons"} centerAlign>
             <ActionMenu actions={actions} row={row} />
           </StyledTableCell>
         )}
@@ -227,7 +226,7 @@ const Table: React.FC<TableProps> = ({
     const pages = [];
 
     pages.push(
-      <StyledPageContainer data-testid="page-container"
+      <StyledPageContainer
         onClick={() => {
           if (pageCount > 1) {
             fetchPage(metadata?.page - 1);
@@ -246,14 +245,13 @@ const Table: React.FC<TableProps> = ({
         <StyledPageContainer
           active={i === metadata?.page}
           onClick={() => fetchPage(i)}
-          data-testid="page-container"
         >
           {i}
         </StyledPageContainer>
       );
     }
     pages.push(
-      <StyledPageContainer data-testid="page-container"
+      <StyledPageContainer 
         onClick={() => {
           if (pageCount !== metadata?.page) {
             fetchPage(metadata?.page + 1);
@@ -275,13 +273,13 @@ const Table: React.FC<TableProps> = ({
     <StyledTableContainer>
       <StyledTable>
         <StyledTableHead>
-          <StyledTableRow data-testid="styled-table-row">{titles()}</StyledTableRow>
+          <StyledTableRow >{titles()}</StyledTableRow>
         </StyledTableHead>
         <StyledTableBody>{[fields()]}</StyledTableBody>
       </StyledTable>
       {data.length === 0 && (
         <StyledNoDataInfoContainer>
-          <StyledNoDataInfo variant="body1" data-testid="no-data-info">
+          <StyledNoDataInfo variant="body1" >
             {emptyMessage || messages?.general?.noData}
           </StyledNoDataInfo>
         </StyledNoDataInfoContainer>

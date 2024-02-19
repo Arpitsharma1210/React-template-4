@@ -22,7 +22,7 @@ export { default as CardContent } from "./card/CardContent";
 export { default as Button } from "./button";
 export { default as ChipButton } from "./chipButton";
 export { default as Dropdown } from "./dropdown";
-export { default as InputLabel } from "./Label";
+export { default as InputLabel } from "./label";
 export { default as Switch } from "./switchInput";
 export { default as DataItem } from "./dataItem";
 export { default as Table } from "./table";

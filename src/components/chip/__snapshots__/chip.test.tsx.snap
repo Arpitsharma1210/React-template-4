@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChipGroup Component renders StyledPopoverChipGroup correctly 1`] = `
+<div
+  className="sc-iCoHzw feAYRd"
+>
+  Chip Group
+</div>
+`;
+
+exports[`ChipGroup Component renders StyledPopoverSectionContainer correctly 1`] = `
+<div
+  className="sc-jSFipO jwYrzW"
+>
+  Section Content
+</div>
+`;
+
+exports[`ChipGroup Component renders StyledPopoverSectionHeader correctly 1`] = `
+<span
+  className="sc-gKAaef hNlCVQ"
+>
+  Section Header
+</span>
+`;
+
+exports[`ChipGroup Component renders chip popover when more chips are available 1`] = `
+<div
+  className="MuiGrid-root css-popmxn-MuiGrid-root"
+>
+  <div
+    className="sc-dlniIP kemozv"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-bdnyFh hMiSEt"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 sc-gtsqUy jLghVx css-ahj2mt-MuiTypography-root"
+      >
+        +2
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ChipGroup Component renders chip with icon when iconCtaClick prop is provided 1`] = `
+<div
+  className="sc-bdnyFh hMiSEt"
+>
+  <p
+    className="MuiTypography-root MuiTypography-body1 sc-gtsqUy jLghVx css-ahj2mt-MuiTypography-root"
+  >
+    Test Chip
+  </p>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+    data-testid="CloseRoundedIcon"
+    focusable="false"
+    onClick={[Function]}
+    style={
+      {
+        "cursor": "pointer",
+      }
+    }
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M18.3 5.71a.9959.9959 0 0 0-1.41 0L12 10.59 7.11 5.7a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`ChipGroup Component renders only specified number of chips when displayCount prop is provided 1`] = `
+<div
+  className="MuiGrid-root css-popmxn-MuiGrid-root"
+>
+  <div
+    bgColor="red"
+    className="sc-bdnyFh jIVdiD"
+    textColor="white"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 sc-gtsqUy jLghVx css-ahj2mt-MuiTypography-root"
+    >
+      Chip  1
+    </p>
+  </div>
+</div>
+`;

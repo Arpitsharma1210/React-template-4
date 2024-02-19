@@ -27,8 +27,8 @@ const MaterialPasswordInput: React.FC<Props> = ({
         color : colors.grey100
     }
     return (
-        <StyledInputContainer data-testid="inputContainer">
-            <TextField data-testid="textfield"
+        <StyledInputContainer>
+            <TextField
                 {...props}
                 value={value || ''}
                 error={disableErrorMode ? undefined : !!error}

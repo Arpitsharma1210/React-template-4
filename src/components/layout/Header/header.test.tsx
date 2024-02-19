@@ -54,19 +54,16 @@ describe('Header component', () => {
 
 
  jest.mock('connected-react-router', () => ({
-  ...jest.requireActual('connected-react-router'), // Import actual module for everything except goBack
-  goBack: jest.fn() // Mock goBack function
+  ...jest.requireActual('connected-react-router'),
+  goBack: jest.fn() 
 }));
 
-// Mock redux store
 const store = createStore(() => ({}));
 
-// Mock goBack action
 jest.mock('connected-react-router', () => ({
   goBack: jest.fn()
 }));
 
-// Define a styled component for testing
 const StyledTestContainer = styled.div``;
 
 it('renders without error', () => {

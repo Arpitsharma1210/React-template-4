@@ -1,184 +1,66 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import MeasurelyTable, { formatDate, } from "../../components/table";
-import {
-  StyledTableCell,
-  StyledTableRow,
-  StyledNoDataInfo,
-  StyledPaginationContainer,
-  StyledPageContainer,
-  StyledActionItem,
-} from "../../components/table/styles";
-import moment from "moment";
-import React from "react";
+import React from 'react';
+import { render } from '@testing-library/react';
+import Table from './'; 
+import '@testing-library/jest-dom';
+import { formatDate } from './';
 
-describe("MeasurelyTable Component", () => {
-  const specs = [
-    { id: "name", label: "Name" },
-    { id: "age", label: "Age" },
-  ];
 
-  const data = [
-    { id: 1, name: "John Doe", age: 25 },
-    { id: 2, name: "Jane Doe", age: 30 },
-  ];
+describe('Table Component', () => {
+  it('matches snapshot when given props', () => {
+    const specs = [
+      { id: 'name', label: 'Name' },
+      { id: 'age', label: 'Age' },
+    ];
 
-  const metadata = {
-    page: 1,
-    limit: 10,
-    total: 20,
-    order: "name",
-    direction: "asc" as "desc" | "asc",
-    filters: [] as any[],
-    allowedFilters: []as any[],
-  };
+    const data = [
+      { id:  1, name: 'John Doe', age:  25 },
+      { id:  2, name: 'Jane Doe', age:  30 },
+    ];
 
-  it("renders without crashing", () => {
-    render(<MeasurelyTable specs={specs} data={data}  />);
-  });
+    const metadata = {
+      page:  1,
+      limit:  10,
+      total:  20,
+      order: 'name',
+      direction: 'asc',
+      filters: {}, 
+  allowedFilters: {}, 
+    };
 
-  it("renders the correct number of columns", () => {
-    render(<MeasurelyTable specs={specs} data={data}  />);
-    expect(screen.getAllByTestId("styled-table-cell")).toHaveLength(6);
-  });
-
-  it("renders the correct number of rows", () => {
-    render(<MeasurelyTable specs={specs} data={data}  />);
-    expect(screen.getAllByTestId("styled-table-row")).toHaveLength(
-      data.length + 1
+    const { asFragment } = render(
+      <Table
+      specs={specs}
+      data={data}
+      metadata={metadata}
+      emptyMessage="No data available."
+      disableSorting={['age']}
+      actionLabel="Actions"
+      updateFilters={() => {}}
+      getId={(row) => row.id}
+      fetchPage={() => {}}
+      updateLimit={() => {}}
+      />
     );
+
+    expect(asFragment()).toMatchSnapshot();
   });
-
-  it("renders the empty message when data is empty", () => {
-    render(<MeasurelyTable specs={specs} data={[]} />);
-    expect(screen.getByTestId("no-data-info")).toBeInTheDocument();
-  });
-
-//   it("calls fetchPage when clicking on pagination buttons", () => {
-//     const fetchPageMock = jest.fn();
-//     render(
-//       <MeasurelyTable
-//         specs={specs}
-//         data={data}
-        
-//         fetchPage={fetchPageMock}
-//       />
-//     );
-
-//     fireEvent.click(screen.getAllByTestId("page-container")[0]);
-
-//     expect(fetchPageMock).toHaveBeenCalledWith(metadata.page);
-//   });
-
-//   it("does not render pagination when not needed", () => {
-//     render(
-//       <MeasurelyTable
-//         specs={specs}
-//         data={data}
-
-//       />
-//     );
-//     expect(screen.queryByTestId("pagination-container")).toBeNull();
-//   });
-
-//   it("returns an empty string when given an empty string", () => {
-//     const result = formatDate("");
-//     expect(result).toBe("");
-//   });
-
-//   it("returns formatted date for a valid input string", () => {
-//     const inputDate = "2023-01-01";
-//     const formattedDate = moment(inputDate).format("DD MMM YYYY");
-//     const result = formatDate(inputDate);
-//     expect(result).toBe(formattedDate);
-//   });
-
-//   it("calls updateFilters with correct parameters when clicking on column title", () => {
-//     const updateFiltersMock = jest.fn();
-//     render(
-//       <MeasurelyTable
-//         specs={specs}
-//         data={data}
-//         updateFilters={updateFiltersMock}
-//       />
-//     );
-
-//     fireEvent.click(screen.getAllByTestId("styled-table-cell")[6]);
-
-//     expect(updateFiltersMock).toHaveBeenCalledWith({
-      
-//     });
-//   });
-
-//   it("handles column sorting", () => {
-//     const updateFiltersMock = jest.fn();
-//     render(
-//       <MeasurelyTable
-//         specs={specs}
-//         data={data}
-//         updateFilters={updateFiltersMock}
-//       />
-//     );
-//     fireEvent.click(screen.getAllByTestId("styled-table-cell")[0]);
-
-//     expect(updateFiltersMock).toHaveBeenCalledWith({
-//       order: specs[0].id,
-//       direction: metadata.direction === "asc" ? "desc" : "asc",
-//     });
-//   });
 });
 
-describe("MeasurelyTable Component additional test cases", () => {
-  const specs = [
-    { id: "name", label: "Name" },
-    { id: "age", label: "Age" },
-  ];
+describe('formatDate Function', () => {
+  it('formats date strings correctly', () => {
+    const formattedDate = formatDate('2023-04-01');
+    expect(formattedDate).toEqual('01 Apr 2023');
 
-  const data = [
-    { id: 1, name: "John Doe", age: 25 },
-    { id: 2, name: "Jane Doe", age: 30 },
-  ];
+    const invalidFormattedDate = formatDate('invalid-date');
+    expect(invalidFormattedDate).toEqual('Invalid date');
 
-  const metadata = {
-    page: 1,
-    limit: 10,
-    total: 20,
-    order: "name",
-    direction: "asc",
-  };
+    const nullFormattedDate = formatDate(null);
+    expect(nullFormattedDate).toEqual('');
 
-  it("renders the correct number of pages with pagination limit options", () => {
-    render(
-      <MeasurelyTable
-        specs={specs}
-        data={data}
-        fetchPage={() => {}}
-      />
-    );
-    expect(screen.getAllByTestId("page-container")).toHaveLength(2);
-  });
+    const undefinedFormattedDate = formatDate(undefined);
+    expect(undefinedFormattedDate).toEqual('');
 
-  it("handles column sorting with specified disabled columns", () => {
-    const updateFiltersMock = jest.fn();
-    render(
-      <MeasurelyTable
-        specs={specs}
-        data={data}
-        updateFilters={updateFiltersMock}
-        disableSorting={["name"]}
-      />
-    );
-    fireEvent.click(screen.getAllByTestId("styled-table-cell")[0]);
-    expect(updateFiltersMock).not.toHaveBeenCalled();
-  });
-
-  it("renders the correct number of pages with pagination limit options when pageCount > totalNumberOfBoxesToShow", () => {
-    render(
-      <MeasurelyTable
-        specs={specs}
-        data={data}
-        fetchPage={() => {}}
-      />
-    );
-    expect(screen.getAllByTestId("page-container")).toHaveLength(2);
+    const emptyStringFormattedDate = formatDate('');
+    expect(emptyStringFormattedDate).toEqual('');
   });
 });

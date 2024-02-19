@@ -20,14 +20,5 @@ describe('MaterialAutocompleteInput component', () => {
     expect(screen.queryByText('Test error')).toBeNull();
   });
   
-//   it('handles value change', () => {
-//     const mockOnChange = jest.fn();
-//     render(<MaterialAutocompleteInput options={[]} onChange={mockOnChange} />);
-
-//     fireEvent.change(screen.getByTestId('materialAutocompleteInput-container').querySelector('input'), { target: { value: 'Test' } });
-
-//     // expect(mockOnChange).toHaveBeenCalledWith('Test');
-//     expect(mockOnChange);
-//   });
 
 });
