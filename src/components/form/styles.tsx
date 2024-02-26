@@ -44,7 +44,8 @@ export const UploadButton = styled.button`
 `;
 
 export const StyledForm = styled.form`
-    
+display: grid;
+gap: 15px;
 `
 
 export const StyledFormRow = styled(Grid)`
