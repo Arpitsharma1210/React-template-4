@@ -23,7 +23,7 @@ export { default as Timefield } from "./inputFields/time";
 export { default as Datefield } from "./inputFields/materialDateInput";
 
 /* HEADER */
-export { default as Header } from "./layout/Header";
+export { default as Header } from "./layout/header";
 
 /* Card */
 export { default as Card } from "./card";
@@ -35,14 +35,14 @@ export { default as CardContent } from "./card/CardContent";
 export { default as Button } from "./button";
 export { default as ChipButton } from "./chipButton";
 export { default as Dropdown } from "./dropdown";
-export { default as InputLabel } from "./Label";
+export { default as InputLabel } from "./label";
 export { default as Switch } from "./switchInput";
 export { default as DataItem } from "./dataItem";
 export { default as Table } from "./table";
 export { default as Tooltip } from "./tooltip";
 export { default as ModalWrapper } from "./modal";
 export { default as Notifications } from "./notifications";
-export { default as Sidebar } from "./layout/Sidebar";
+export { default as Sidebar } from "./layout/sidebar";
 export { default as ColumnMatrix } from "./columnMatrix";
 export { default as CustomAccordion } from "./accordion";
 export { default as RichTextEditor } from "./richTextEditor";
