@@ -46,11 +46,13 @@ export const UploadButton = styled.button`
 export const StyledForm = styled.form`
 display: grid;
 gap: 15px;
+
+& .MuiGrid-root { 
+  padding:  5px;
+}
 `
 
 export const StyledFormRow = styled(Grid)`
-    gap : 16px;
-    margin-bottom : 16px;
 `
 export const StyledFormRowItem = styled(Grid)`
     display : flex;
