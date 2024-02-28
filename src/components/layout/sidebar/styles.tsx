@@ -86,7 +86,7 @@ export const StyledMenuIconOuter = styled.div<{ selected?: boolean }>`
     !selected &&
     css`
       &:hover {
-        background: #fdf1b0;
+        background: ${brand.secondaryMain};
     `}
 
   ${({ selected }) =>

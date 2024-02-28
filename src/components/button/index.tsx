@@ -8,6 +8,8 @@ interface Props {
   onClick?: any;
   type?: "button" | "reset" | "submit";
   disabled?: boolean;
+  label?: string;
+  style?: React.CSSProperties;
 }
 
 const MuiButton: React.FC<Props> = ({
@@ -17,6 +19,8 @@ const MuiButton: React.FC<Props> = ({
   onClick,
   type,
   disabled,
+  label,
+  style,
   ...props
 }) => {
   const clickHandler = (e: any) => {

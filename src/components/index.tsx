@@ -10,7 +10,7 @@ export { default as Selectfield } from "./inputFields/select";
 export { default as Timefield } from "./inputFields/time";
 
 /* HEADER */
-export { default as Header } from "./layout/Header";
+export { default as Header } from "./layout/header";
 
 /* Card */
 export { default as Card } from "./card";
@@ -29,7 +29,7 @@ export { default as Table } from "./table";
 export { default as Tooltip } from "./tooltip";
 export { default as ModalWrapper } from "./modal";
 export { default as Notifications } from "./notifications";
-export { default as Sidebar } from "./layout/Sidebar";
+export { default as Sidebar } from "./layout/sidebar";
 export { default as ColumnMatrix } from "./columnMatrix";
 export { default as CustomAccordion } from "./accordion";
 export { default as Toast } from "./toast";
@@ -52,3 +52,4 @@ export {default as ChipGroup} from './chip/chipGroup';
 export {default as Info} from './info';
 export {default as TruncatedText} from './truncatedText';
 export {default as Accordion} from './accordion';
+export {default as SwitchInput} from './switchInput';

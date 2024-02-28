@@ -3,12 +3,12 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { AuthenticationStatus } from "../redux/reducers/auth";
 import { OnlyWith } from "../components";
 import { routes } from "../utils";
-import Dashboard from "./Dashboard";
 import Login from "./Auth/Login";
 import ResetPassword from "./Auth/ResetPassword";
 import UserRegistration from "./Auth/UserRegistration";
 import ForgotPassword from "./Auth/ForgotPassword";
 import Profile from "./profile";
+import Dashboard from "./dashboard";
 
 const Screens: React.FC = () => (
   <>

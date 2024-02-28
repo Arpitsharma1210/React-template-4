@@ -106,6 +106,7 @@ const theme = createTheme({
           boxShadow: `${colors.boxShadow}`,
           backgroundColor: `${colors.white}`,
           borderRadius: "30px",
+          minWidth: "400px",
         },
       },
     },

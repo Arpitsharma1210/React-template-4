@@ -5,6 +5,8 @@ import { Typography } from "@mui/material";
 
 const CommonModalStyles = () => css`
   min-height: 300px;
+  max-height: -webkit-fill-available;
+  overflow-y: auto;
   max-width: 50%;
   padding: 30px;
   background-color: ${colors.white};

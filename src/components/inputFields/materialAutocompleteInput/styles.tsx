@@ -1,6 +1,7 @@
 import { styled, css } from "styled-components";
 import { Autocomplete } from "@mui/material";
-import { colors } from "../../../theme/style.palette";
+import { brand, colors } from "../../../theme/style.palette";
+import { fontSize, fontWeight } from "../../../theme/style.typography";
 
 export const StyledAutoComplete = styled(Autocomplete)<{
   formatfor: "table" | "form";
@@ -35,3 +36,29 @@ export const StyledAutoComplete = styled(Autocomplete)<{
         }
       `)}
 `;
+export const StyledChipContainer = styled.div`
+    display: flex;
+    padding: 2px 5px 2px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 60px;
+    background: ${brand.primaryMain};
+    margin-right : 5px;
+`
+
+export const StyledChipLabel = styled.span`
+    color : ${brand.primaryMain};
+    font-size : ${fontSize.b2};
+    font-weight : ${fontWeight.medium};
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 72px;
+
+`
+
+export const StyledChipCloseContainer = styled.div`
+    cursor : pointer;
+    display : flex;
+`

@@ -1,6 +1,7 @@
-import { Switch } from "@mui/material";
+import { FormControlLabel, Switch } from "@mui/material";
 import styled from "styled-components";
 import { colors } from "../../theme/style.palette";
+import { baseFontFamily, fontSize, fontWeight } from "../../theme/style.typography";
 
 export const IOSSwitch = styled(Switch).attrs(() => ({
   classes: {
@@ -61,3 +62,12 @@ export const IOSSwitch = styled(Switch).attrs(() => ({
   .focusVisible {
   }
 `;
+export const StyledFormControlLabel = styled(FormControlLabel)`
+    margin-left : 0px !important;
+    .MuiFormControlLabel-label {
+        font-size: ${fontSize.b1};
+        font-weight: ${fontWeight.medium};
+        font-family: ${baseFontFamily};
+        color: ${colors.grey100};
+    }
+`
