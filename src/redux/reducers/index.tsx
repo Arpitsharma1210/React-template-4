@@ -33,6 +33,5 @@ const createRootReducer = (history: History): Reducer =>
       validationErrors: {},
     }),
       // Add more Reducers here
-      loader: (state = null) => state,
   });
 export default createRootReducer;
