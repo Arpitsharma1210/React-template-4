@@ -23,7 +23,7 @@ const Card: React.FC<Props> = ({ header, children,
             {!noHeader && <StyledCardHeader style={headerCss} noHeaderPadding={noHeaderPadding}>
                 {header}
                 {title && (
-                    <Grid 
+                    <Grid
                         container
                         alignItems={'center'}
                         justifyContent={'space-between'}

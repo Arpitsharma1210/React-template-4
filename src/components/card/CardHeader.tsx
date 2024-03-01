@@ -1,7 +1,7 @@
 import React from "react";
 import { CardHeader as Card_Header } from "@mui/material";
 interface Props {
-  children: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[] | string;
 }
 
 const CardHeader: React.FC<Props> = ({

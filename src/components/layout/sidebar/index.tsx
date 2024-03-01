@@ -73,7 +73,7 @@ const Sidebar = () => {
         />
       </StyledLogoContainer>
       <StyledLineBreak className="sidebar_logo_linebreak"></StyledLineBreak>
-      <AllMenuItems className="allMenu_items">
+      <AllMenuItems className="allMenu_items" >
         <StyledMenuItemContainer className="menubar">
           {menuItems.map((menuItem, index) => (
             <StyledMenuOption key={index} className="menuItem_wrapper">

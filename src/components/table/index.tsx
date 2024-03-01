@@ -251,7 +251,7 @@ const Table: React.FC<TableProps> = ({
       );
     }
     pages.push(
-      <StyledPageContainer
+      <StyledPageContainer 
         onClick={() => {
           if (pageCount !== metadata?.page) {
             fetchPage(metadata?.page + 1);
@@ -273,13 +273,13 @@ const Table: React.FC<TableProps> = ({
     <StyledTableContainer>
       <StyledTable>
         <StyledTableHead>
-          <StyledTableRow>{titles()}</StyledTableRow>
+          <StyledTableRow >{titles()}</StyledTableRow>
         </StyledTableHead>
         <StyledTableBody>{[fields()]}</StyledTableBody>
       </StyledTable>
       {data.length === 0 && (
         <StyledNoDataInfoContainer>
-          <StyledNoDataInfo variant="body1">
+          <StyledNoDataInfo variant="body1" >
             {emptyMessage || messages?.general?.noData}
           </StyledNoDataInfo>
         </StyledNoDataInfoContainer>

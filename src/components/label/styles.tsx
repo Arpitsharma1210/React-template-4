@@ -9,7 +9,7 @@ import { colors, brand } from "../../theme/style.palette";
 
 export const StyledFieldLabel = styled.p<{ required?: boolean }>`
   font-family: ${baseFontFamily};
-  color: ${brand.secondary100};
+  color: ${brand.secondaryMain};
   font-size: ${fontSize.b2};
   font-weight: ${fontWeight.medium};
   margin: 0;

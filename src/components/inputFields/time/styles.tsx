@@ -14,7 +14,7 @@ export const StyledTimePicker = styled(TimePicker)<{
 
       & .MuiOutlinedInput-notchedOutline {
         border-radius: 6px;
-        border: 1px solid ${brand.secondary100};
+        border: 1px solid ${brand.secondaryMain};
       }
     `}
   ${({ formatfor }) =>

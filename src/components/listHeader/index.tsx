@@ -82,8 +82,8 @@ const ListHeader: React.FC<Props> = ({
                     </Button>
                 </StyledActionItem>}
             </StyledActionItemContainer>
-            {ctaLabel && <StyledActionItemContainer justifyContent={'flex-end'}>
-                <StyledActionItem lastItem>
+            {ctaLabel && <StyledActionItemContainer justifycontent='flex-end'>
+                <StyledActionItem lastitem>
                     <Button
                         variant="contained"
                         endIcon={<AddIcon />}
