@@ -1,7 +1,7 @@
 import * as React from "react";
 import successIcon from "../../assets/images/successPopup.png";
 import failIcon from "../../assets/images/failPopup.png";
-import { ModalWrapper } from "../";
+import { ModalWrapper } from "..";
 
 import {
     ContentWrapper,

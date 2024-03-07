@@ -7,13 +7,8 @@ export { default as JobForm } from "./form/job";
 export * from './form';
 
 /* POPUPS */
-export { default as InfoPopup } from "./popup/InfoPopup";
-export { default as DeletePopup } from "./popup/DeletePopup";
-export { default as WarningPopup } from "./popup/WarningPopup";
-export { default as FeedbackPopup } from "./popup/FeedbackPopup";
-export { default as AssignPopup } from "./popup/AssignPopup";
-export { default as ReschedulePopup } from "./popup/ReschedulePopup";
-export { default as EditPipelinePopup } from "./popup/EditPipeline";
+export { default as InfoPopup } from "./popup/infoPopup";
+
 
 /* INPUTFIELDS */
 export { default as Textfield } from "./inputFields/materialTextInput";

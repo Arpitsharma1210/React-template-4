@@ -58,18 +58,11 @@ export const StyledIcon = styled.img`
   width: 80px;
 `;
 
-export const PopupText = styled.p<{ $smallText?: boolean }>`
+export const PopupText = styled.p`
   font-size: ${fontSize.b1};
   font-weight: ${fontWeight.regular};
   line-height: 28px;
   color: ${colors.grey100};
-
-  ${({ $smallText }) =>
-    $smallText &&
-    css`
-      font-size: ${fontSize.b3};
-      line-height: 16px;
-    `}
 `;
 
 export const PopupMsgText = styled.p`
