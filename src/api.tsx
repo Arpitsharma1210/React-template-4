@@ -16,6 +16,7 @@ export const USER_DETAILS = "/api/user";
 export const DELETE_USER = "/api/user";
 export const OPTIONS_DEPARTMENT = "/api/department";
 export const UPDATE_USER = "/api/user";
+export const USER_PROFILE = "/api/user/profile";
 
 // Add your api calls here
 

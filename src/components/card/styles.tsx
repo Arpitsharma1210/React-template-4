@@ -15,7 +15,6 @@ export const StyledCardContent = styled(Card)`
        
    }
 `
-
 export const StyledCardHeader = styled.div<{noHeaderPadding?:boolean}>`
     // padding : ${({noHeaderPadding})=>noHeaderPadding? '0px' : '16px'} !important;
     // background: linear-gradient(46deg, ${brand.primaryMain} 0%, ${brand.secondaryMain} 100%);

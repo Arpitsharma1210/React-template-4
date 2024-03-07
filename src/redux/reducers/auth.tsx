@@ -1,7 +1,9 @@
 import { Action, TOKEN_REMOVE, TOKEN_UPDATE } from "../actions";
 
+
 export enum Right {
-  DASHBOARD = "DASHBOARD",
+    DASHBOARD = "DASHBOARD",
+    USER_PROFILE = "USER_PROFILE"
 }
 
 export enum AuthenticationStatus {
@@ -49,7 +51,7 @@ export const defaultAuthState:AuthState = {
   },
 };
 
-const getRightsForRole = (role: Role): Right[] => {
+export const getRightsForRole = (role: Role): Right[] => {
   switch (role) {
     case Role.ADMINISTRATOR:
       return [
