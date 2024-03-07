@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast Component matches snapshot when given props 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnyFh jeWNUc"
+  >
+    <figure>
+      <img
+        alt="toast icon"
+        src="test-file-stub"
+      />
+    </figure>
+    <div
+      class="toast-text"
+    >
+      <p
+        class="toast-text-maintext"
+      >
+        Success Message
+      </p>
+      <p
+        class="toast-text-subtext"
+      >
+        Additional Information
+      </p>
+    </div>
+    <div
+      class="closeBtn"
+      role="button"
+      tabindex="0"
+    >
+      <img
+        alt="close icon"
+        src="test-file-stub"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
