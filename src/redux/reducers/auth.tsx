@@ -3,7 +3,7 @@ import { Action, TOKEN_REMOVE, TOKEN_UPDATE } from "../actions";
 
 export enum Right {
     DASHBOARD = "DASHBOARD",
-    USER_PROFILE = "USER_PROFILE"
+    USER_PROFILE = "USER_PROFILE",
 }
 
 export enum AuthenticationStatus {
