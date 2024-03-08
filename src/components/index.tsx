@@ -54,3 +54,4 @@ export {default as TruncatedText} from './truncatedText';
 export {default as Accordion} from './accordion';
 export {default as SwitchInput} from './switchInput';
 export {default as InfoPopup} from './popup/infoPopup';
+export {default as MaterialDateInput} from './materialDateInput';
